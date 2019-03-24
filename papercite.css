@@ -51,3 +51,14 @@ span.papercite_checked_files
 	color: red;
 	border-radius: 3px;
 }
+
+/* styles for the post editor meta box */
+ul#papercite-metabox-content {
+}
+
+li.papercite-metabox-bibentry button {
+    font-weight: bold;
+
+}
+
+

@@ -22,6 +22,20 @@
   - http://ottopress.com/2009/wordpress-settings-api-tutorial/
  */
 
+define( 'BIBTEX_SAMPLE', <<<EOF
+@article{article,
+  author  = {Peter Adams}, 
+  title   = {The title of the work},
+  journal = {The name of the journal},
+  year    = 1993,
+  number  = 2,
+  pages   = {201-213},
+  month   = 7,
+  note    = {An optional note}, 
+  volume  = 4
+}
+EOF
+);
 
 add_action('admin_menu', 'papercite_create_menu');
 
@@ -103,9 +117,28 @@ function papercite_options_page() {
     }
   });
 
+  jQuery("#papercite_format").change(function (evt) {
+      var format = jQuery(this).val();
+      jQuery.get(ajaxurl + '?action=bibtex_preview',
+          {format: format, bibtex: "<?php echo urlencode( BIBTEX_SAMPLE ) ?>"},
+          function (bib_html) {
+              jQuery('.bibitem_preview').html(bib_html);
+          });
+  });
+
   </script>
   <?php
 }
+
+add_action( 'wp_ajax_bibtex_preview', function () {
+	global $papercite;
+	$format        = $_GET['format'];
+	$bibtex_data   = urldecode( $_GET['bibtex'] );
+	$bibtex_parsed = $papercite->parseBibTexString( $bibtex_data );
+	$bib_html      = $papercite->formatBibliographyItems( $bibtex_parsed, $format, $papercite->options );
+	echo $bib_html;
+	wp_die();
+} );
 
 // add the admin settings and such
 add_action('admin_init', 'papercite_admin_init');
@@ -153,6 +186,14 @@ function papercite_files_text() {
   echo '<p>How attached files are detected - and associated to (bibtex) fields</p>';
 }
 
+function papercite_list_tpl_formats() {
+	$tpl_list = list_files( plugin_dir_path( __FILE__ ) . "/format" );
+
+	return array_map( function ( $tpl_filename ) {
+		return pathinfo( $tpl_filename, PATHINFO_FILENAME );
+	}, $tpl_list );
+}
+
 
 
 function papercite_file() {
@@ -160,9 +201,25 @@ function papercite_file() {
   echo "<input id='papercite_file' name='papercite_options[file]' size='40' type='text' value='{$options['file']}' />";
 }
 
+/**
+ * callback to a dropdown to select the bibliography format
+ * @author digfish
+ * @since 0.5.21
+ */
+
 function papercite_format() {
-  $options = $GLOBALS["papercite"]->options;
-  echo "<input id='papercite_format' name='papercite_options[format]' size='40' type='text' value='{$options['format']}' />";
+	$options     = $GLOBALS["papercite"]->options;
+	$tpl_formats = papercite_list_tpl_formats();
+
+	//echo "<input id='papercite_format' name='papercite_options[format]' size='40' type='text' value='{$options['format']}' />";
+	echo "<select id='papercite_format' name='papercite_options[format]' size='40' style='float: left; height: " . ( 18.5 * count( $tpl_formats ) ) . "px '>";
+	foreach ( $tpl_formats as $format ) {
+		echo "<option value='$format' " . ( ( $format == $options['format'] ) ? "selected=true" : "" ) . " >$format</option>";
+	}
+	echo "</select>";
+	echo "<div class='bibitem_preview_container' style='float: left; margin-left:50px'><strong>Preview</strong>
+<div class='bibitem_preview' style='background-color: lightgray; min-heigth: 200px; max-width: 500px'><tt>" . BIBTEX_SAMPLE . "</tt>  </div>
+</div>";
 }
 
 function papercite_timeout() {

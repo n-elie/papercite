@@ -1,3 +1,5 @@
 cache
 _repos
 _tests
+vendor
+composer.lock
