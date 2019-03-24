@@ -12,7 +12,7 @@ class PaperciteBibtexCreators {
   function count() {
     return sizeof($this->creators);
   }
-
+  
   static function parse($authors) {
       $parseCreators = new PaperciteParseCreators();
       $creators = $parseCreators->parse($authors);
@@ -62,6 +62,7 @@ class PaperciteBibtexCreators {
 		return $toks;
 	}
 
+
 }
 
 /**
@@ -81,15 +82,14 @@ class PaperciteBibtexPages {
 		if ( $c == 1 ) {
 			return $this->start;
 		}
-
 		return $this->start . "-" . $this->end;
 	}
-
 	public function __toString() {
 		// TODO: Implement __toString() method.
 		//return "pages {$this->start} : {$this->end}";
 		return $this->toCSL();
 	}
-}
+
+
 
 ?>

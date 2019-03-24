@@ -161,23 +161,9 @@ function papercite_options_page() {
 
         }
 
-    </script>
-
-
-	<?php
+  </script>
+  <?php
 }
-
-add_action( 'wp_ajax_bibtex_preview', function () {
-	global $papercite;
-	$format        = $_GET['format'];
-	$format_type   = $_GET['format_type'];
-	$bibtex_data   = urldecode( $_GET['bibtex'] );
-	$personalized  = isset( $_GET['personalized'] ) ? $_GET['personalized'] : "default";
-	$bibtex_parsed = $papercite->parseBibTexString( $bibtex_data );
-	$bib_html      = $papercite->formatBibliographyItems( $bibtex_parsed, $format, $papercite->options, $format_type );
-	echo $bib_html;
-	wp_die();
-} );
 
 // add the admin settings and such
 add_action('admin_init', 'papercite_admin_init');
@@ -367,7 +353,7 @@ function papercite_use_db() {
 	print "<div id=\"papercite_db_ok\" style='" . ( $exists ? "" : "display:none;" ) . "color:blue'>The database has been created.</div>";
 	print "<div id=\"papercite_db_nok\" style='" . ( ! $exists ? "" : "display:none;" ) . ( $option ? "color:red;" : "" ) . "'>The database does not exist. [<span class='papercite_link' id='papercite_create_db'>Create</span>]</div>";
 
-	if ( $exists ) {
+  if ($exists) {
 		// Display some information
 		print "<div class='papercite_info'>" . $wpdb->get_var( "SELECT count(*) FROM $papercite_table_name" ) . " entries in the database</div>";
 		print "<div class='papercite_info'>Cached bibtex files: " .

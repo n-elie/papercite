@@ -1,14 +1,14 @@
-*/cache
+cache
 _repos
 _tests
 vendor
-composer.lock
+*.lock
 .idea
 /package-lock.json
 *.html
 /tests/converted.csl.json
 /tests/converted.raw.json
 /tests/papercite-cache/
-/utils/my-converter.php
 ppc_*
 *.bib
+*.sublime-workspace
