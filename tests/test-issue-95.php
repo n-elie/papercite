@@ -1,7 +1,10 @@
 <?php
 
+namespace Papercite\Tests;
 // See http://wp-cli.org/blog/plugin-unit-tests.html
 require_once dirname(__FILE__) . '/common.inc.php';
+
+use DOMXPath;
 
 class Issue95 extends PaperciteTestCase {
     static $data = <<<EOF

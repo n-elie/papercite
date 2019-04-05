@@ -46,12 +46,13 @@
 
 
 // Requires the entry template class
-require("bib2tpl-entry.php");
+require_once( "bib2tpl-entry.php" );
 
 // Some stupid functions
-require('helper.inc.php');
+require_once( 'helper.inc.php' );
 
-
+// CSL Support
+require_once( dirname( __DIR__ ) . "/lib/BibTeX2CSL.php" );
 
 /**
  * This class provides a method that parses bibtex files to
@@ -63,8 +64,7 @@ require('helper.inc.php');
  * @author Benjamin Piwowarski
  * @version 2.0
  */
-class BibtexConverter
-{
+class BibtexConverter {
   /**
    * BibTex parser
    *
@@ -544,12 +544,38 @@ class BibtexConverter
         if ($match[1] == "#entry") {
           // Formats one bibtex
             if ($this->_entry["entrytype"]) {
-                $type = $this->_entry["entrytype"];
-                $entryTpl = $this->_entry_template->get($type);
-              //print "<div><b>$type</b>: ". htmlentities($entryTpl). "</div>";
-                $this->_globals["positionInGroup"] = $this->count;
-                $this->_globals["positionInList"] = $this->count;
-                $t=  preg_replace_callback(BibtexConverter::$mainPattern, array($this, "_callback"), $entryTpl) . $match[2];
+	            if ( $this->_entry["entrytype"] ) {
+		            if ( isset( $this->cslrenderer ) ) {
+			            $converted_entry = BibTeX2CSL::convert( $this->_entry );
+			            //$tmp = tmpfile();
+			            /*			            $converter = new MyConverter($this->_entry);
+												$converter->setOneEntry();*/
+//			            $converted_entry = $converter->convert();
+
+			            /*			            $tmp = fopen("bib.json","w+");
+												$encoded_entry = json_encode($converted_entry,JSON_PRETTY_PRINT);
+												$length = strlen($encoded_entry);
+												fwrite($tmp,$encoded_entry);
+												fseek($tmp,0);
+												$read_entry = json_decode(fread($tmp,$length));
+												fclose($tmp);*/
+			            $t = $this->cslrenderer->bibliography( array(
+					            'data' => array( $converted_entry )
+				            ) )
+			                 // . print_r(BibTeX2CSL::convert($this->_entry),true)
+			                 . $match[2];
+		            } else {
+			            $type     = $this->_entry["entrytype"];
+			            $entryTpl = $this->_entry_template->get( $type );
+			            //print "<div><b>$type</b>: ". htmlentities($entryTpl). "</div>";
+			            $this->_globals["positionInGroup"] = $this->count;
+			            $this->_globals["positionInList"]  = $this->count;
+			            $t                                 = preg_replace_callback( BibtexConverter::$mainPattern, array(
+					            $this,
+					            "_callback"
+				            ), $entryTpl ) . $match[2];
+		            }
+	            }
             } else {
                 if (isset($this->_entry["cite"])) {
                     $t = "<span style='color:red'>Unknown bibtex entry with key [".$this->_entry["cite"] ."]</span>" . $match[2];

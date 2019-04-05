@@ -1,0 +1,13 @@
+.csl-bib-body {
+
+
+}
+
+.csl-entry {
+    display: list-item;
+    list-style-type: disc;
+    margin-left: 1.3em;
+    /*
+    list-style: square outside none;
+    */
+}
