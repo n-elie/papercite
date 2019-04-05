@@ -1,7 +1,12 @@
-cache
+*/cache
 _repos
 _tests
 vendor
 composer.lock
 .idea
-*sublime*
+/package-lock.json
+*.html
+/tests/converted.csl.json
+/tests/converted.raw.json
+/tests/papercite-cache/
+/utils/my-converter.php
