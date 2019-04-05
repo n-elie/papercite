@@ -40,7 +40,7 @@ define( 'CSL_STYLES_LOCATION', "vendor/citation-style-language/styles-distributi
 include_once( "lib/BibTex_pear.php" );
 include_once( "lib/BibTex_osbib.php" );
 include_once( "papercite_helpers.php" );
-include_once( "lib/BibTeX2CSL.php" );
+
 
 
 #include_once( PAPERCITE_CUR_DIR . "/bib2tpl/bibtex_converter.php" );
