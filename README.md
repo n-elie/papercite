@@ -12,7 +12,7 @@
 Papercite helps to format bibtex entries to display a bibliography or
 cite papers.
 
-***This fork adds support for textual footnotes, and CSL support***
+***This fork adds support for textual footnotes, besides references from bibliograhic databases.***
 
 
 ## Description 

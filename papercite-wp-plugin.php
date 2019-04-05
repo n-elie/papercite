@@ -62,7 +62,7 @@ function papercite_init() {
 	wp_register_style( 'ppc-post-editor-css', plugins_url( 'papercite/ppc_post_editor.css' ) );
 	wp_enqueue_style( 'ppc-post-editor-css' );
 
-	// Initialise the object
+	// Initialise the singleton
 	$papercite = new WpPapercite();
 }
 
@@ -144,7 +144,20 @@ function &papercite_cb( $myContent ) {
 	// (3) Handles custom keys in bibshow and return
 	$text = str_replace( $papercite->keys, $papercite->keyValues, $text );
 
+	// (4) add CSS styles to the markup if there is
+	$text = renderCssStyles( $text );
+
 	return $text;
+}
+
+function renderCssStyles( $text = '' ) {
+	global $papercite;
+	if ( ! empty( $papercite->cssStyles ) ) {
+		$text = "<style type='text/css' rel='stylesheet' id='citeproc-styles'>\n{$papercite->cssStyles}</style> $text";
+	}
+
+	return $text;
+
 }
 
 

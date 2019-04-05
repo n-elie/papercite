@@ -1,5 +1,4 @@
 <?php
-
 /*  Copyright 2012-18  Benjamin Piwowarski  (email : benjamim@bpiwowar.net)
 
     Contributors:
@@ -24,12 +23,13 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-/* Main Class Papercite moved to this file. All the papercite old class methods
+/** Main Class Papercite moved to this file. All the papercite old class methods
  * with no dependencies on Wordpress has been moved, and some reimplemented to not
  *   depend on Wordpress
  * to this file
  * User: digfish
  */
+
 
 define( 'PAPERCITE_CUR_DIR', __DIR__ );
 if ( ! defined( 'PAPERCITE_CONTENT_DIR' ) ) {
@@ -40,10 +40,15 @@ define( 'CSL_STYLES_LOCATION', "vendor/citation-style-language/styles-distributi
 include_once( "lib/BibTex_pear.php" );
 include_once( "lib/BibTex_osbib.php" );
 include_once( "papercite_helpers.php" );
+include_once( "lib/BibTeX2CSL.php" );
 
+
+#include_once( PAPERCITE_CUR_DIR . "/bib2tpl/bibtex_converter.php" );
 include_once( PAPERCITE_CUR_DIR . "/bib2tpl/tpl_converter.php" );
 include_once( PAPERCITE_CUR_DIR . "/csl/csl-converter.php" );
 include_once( PAPERCITE_CUR_DIR . "/csl/citeproc-renderer.php" );
+#include_once("lib/CiteProc.php");
+
 
 /**
  * Get string with author name(s) and make regex of it.
@@ -53,85 +58,80 @@ include_once( PAPERCITE_CUR_DIR . "/csl/citeproc-renderer.php" );
  *
  * @param unknown $authors - string parsed from papercite after tag: "author="
  */
+class PaperciteAuthorMatcher {
+	function __construct( $authors ) {
+		// Each element of this array is alternative match
+		$this->filters = array();
 
+		if ( ! isset( $authors ) || empty( $authors ) ) {
+		} elseif ( ! is_string( $authors ) ) {
+			echo "Warning: cannot parse option \"authors\", this is specified by string!<br>";// probably useless..
+			// string contains both: & and | => this is not supported
+		} else {
+			require_once( dirname( __FILE__ ) . "/lib/bibtex_common.php" );
+			foreach ( preg_split( "-\\|-", $authors ) as $conjonction ) {
+				$this->filters[] = PaperciteBibtexCreators::parse( $conjonction );
+			}
+		}
+	}
 
-class PaperciteAuthorMatcher
-{
-    function __construct($authors)
-    {
-        // Each element of this array is alternative match
-        $this->filters = array();
+	function matches( &$entry ) {
+		$ok       = true;
+		$eAuthors = &$entry["author"];
+		foreach ( $this->filters as &$filter ) {
+			foreach ( $filter->creators as $author ) {
+				$ok = false;
+				foreach ( $eAuthors->creators as $eAuthor ) {
+					if ( $author["surname"] === $eAuthor["surname"] ) {
+						$ok = true;
+						break;
+					}
+				}
+				// Author was not found in publication
+				if ( ! $ok ) {
+					break;
+				}
+			}
+			// Everything was OK
+			if ( $ok ) {
+				break;
+			}
+		}
 
-        if (!isset($authors) || empty($authors)) {
-        } elseif (!is_string($authors)) {
-            echo "Warning: cannot parse option \"authors\", this is specified by string!<br>";// probably useless..
-            // string contains both: & and | => this is not supported
-        } else {
-            require_once(dirname(__FILE__) . "/lib/bibtex_common.php");
-            foreach (preg_split("-\\|-", $authors) as $conjonction) {
-                $this->filters[] = PaperciteBibtexCreators::parse($conjonction);
-            }
-        }
-    }
-
-    function matches(&$entry)
-    {
-        $ok = true;
-        $eAuthors = &$entry["author"];
-        foreach ($this->filters as &$filter) {
-            foreach ($filter->creators as $author) {
-                $ok = false;
-                foreach ($eAuthors->creators as $eAuthor) {
-                    if ($author["surname"] === $eAuthor["surname"]) {
-                        $ok = true;
-                        break;
-                    }
-                }
-                // Author was not found in publication
-                if (!$ok) {
-                    break;
-                }
-            }
-            // Everything was OK
-            if ($ok) {
-                break;
-            }
-        }
-        return $ok;
-    }
+		return $ok;
+	}
 }
 
-class Papercite
-{
+class Papercite {
 
 
-    var $parse = false;
+	var $parse = false;
 
 
-    // List of publications for those citations
-    var $bibshows = array();
+	// List of publications for those citations
+	var $bibshows = array();
 
-    // Our caches (bibtex files and formats)
-    var $cache = array();
+	// Our caches (bibtex files and formats)
+	var $cache = array();
 
-    // Array of arrays of current citations
-    var $cites = array();
+	// Array of arrays of current citations
+	var $cites = array();
 
-    // Global replacements for cited keys
-    var $keys = array();
-    var $keyValues = array();
+	// Global replacements for cited keys
+	var $keys = array();
+	var $keyValues = array();
 
-    // bibshow options stack
-    var $bibshow_options = array();
-    var $bibshow_tpl_options = array();
+	// bibshow options stack
+	var $bibshow_options = array();
+	var $bibshow_tpl_options = array();
 
-    // Global counter for unique references of each
-    // displayed citation (used by bibshow)
-    var $citesCounter = 0;
+	// Global counter for unique references of each
+	// displayed citation (used by bibshow)
+	var $citesCounter = 0;
 
-    // Global counter for unique reference of each
-    // displayed citation
-    var $counter = 0;
+	// Global counter for unique reference of each
+	// displayed citation
+	var $counter = 0;
 
 
 	var $options;
@@ -139,38 +139,55 @@ class Papercite
 	//! Add an error message
 	var $error_messages = array();
 
-    static $bibtex_parsers = array("pear" => "Pear parser", "osbib" => "OSBiB parser");
+	static $bibtex_parsers = array( "pear" => "Pear parser", "osbib" => "OSBiB parser" );
 
-    // Names of the options that can be set
-    static $option_names = array("format", "timeout", "file", "bibshow_template", "bibtex_template", "bibtex_parser",
-        "use_db", "auto_bibshow", "use_media", "use_files", "skip_for_post_lists", "process_titles", "checked_files", "show_links", "highlight", "ssl_check", "format_type");
+	// Names of the options that can be set
+	static $option_names = array(
+		"format",
+		"timeout",
+		"file",
+		"bibshow_template",
+		"bibtex_template",
+		"bibtex_parser",
+		"use_db",
+		"auto_bibshow",
+		"use_media",
+		"use_files",
+		"skip_for_post_lists",
+		"process_titles",
+		"checked_files",
+		"show_links",
+		"highlight",
+		"ssl_check",
+		"format_type"
+	);
 
-    // Default value of options
-    static $default_options =
-	    array(
-		    "format"              => "ieee",
-		    "group"               => "none",
-		    "order"               => "desc",
-		    "sort"                => "none",
-		    "key_format"          => "numeric",
-		    "bibtex_template"     => "default-bibtex",
-		    "bibshow_template"    => "default-bibshow",
-		    "bibtex_parser"       => "osbib",
-		    "use_db"              => false,
-		    "auto_bibshow"        => false,
-		    "use_media"           => false,
-		    "use_files"           => true,
-		    "skip_for_post_lists" => false,
-		    "group_order"         => "",
-		    "timeout"             => 3600,
-		    "process_titles"      => true,
-		    "checked_files"       => array( array( "pdf", "pdf", "", "pdf", "application/pdf" ) ),
-		    "show_links"          => true,
-		    "highlight"           => "",
-		    "ssl_check"           => false,
-		    "filters"             => array(),
-		    "format_type" => 'tpl'
-	    );
+	// Default value of options
+	static $default_options =
+		array(
+			"format"              => "ieee",
+			"group"               => "none",
+			"order"               => "desc",
+			"sort"                => "none",
+			"key_format"          => "numeric",
+			"bibtex_template"     => "default-bibtex",
+			"bibshow_template"    => "default-bibshow",
+			"bibtex_parser"       => "osbib",
+			"use_db"              => false,
+			"auto_bibshow"        => false,
+			"use_media"           => false,
+			"use_files"           => true,
+			"skip_for_post_lists" => false,
+			"group_order"         => "",
+			"timeout"             => 3600,
+			"process_titles"      => true,
+			"checked_files"       => array( array( "pdf", "pdf", "", "pdf", "application/pdf" ) ),
+			"show_links"          => true,
+			"highlight"           => "",
+			"ssl_check"           => false,
+			"filters"             => array(),
+			"format_type"         => 'tpl'
+		);
 
 
 	function init() {
@@ -180,85 +197,80 @@ class Papercite
 		if ( empty( $this->options ) ) {
 			$this->options = self::$default_options;
 		}
+		/*		$this->lastCommand = '';
+				$this->lastCommandOptions = array();*/
+
 	}
 
-    /**
-     * Check if a matching file exists, and add it to the bibtex if so
-     * @param $entry key
-     * @param $types An array of couples (folder, extension)
-     */
-    function checkFiles(&$entry, $options)
-    {
+	/**
+	 * Check if a matching file exists, and add it to the bibtex if so
+	 *
+	 * @param $entry key
+	 * @param $types An array of couples (folder, extension)
+	 */
+	function checkFiles( &$entry, $options ) {
 
-        if (!isset($entry['cite'])) {
-            return;
-        }
-        $id = strtolower(preg_replace("@[/:]@", "-", $entry["cite"]));
-        foreach ($options["checked_files"] as &$type) {
-            // 0. field, 1. folder, 2. suffix, 3. extension, 4. mime-type
-            if (sizeof($type) == 3) {
-                $type[3] = $type[2];
-                $type[2] = "";
-                $type[4] = "";
-            }
-            $file = $this->getDataFile("$id$type[2]", $type[3], $type[1], $type[4], $options);
-            if ($file) {
-                $entry[$type[0]] = $file[1];
-            }
-        }
-    }
+		if ( ! isset( $entry['cite'] ) ) {
+			return;
+		}
+		$id = strtolower( preg_replace( "@[/:]@", "-", $entry["cite"] ) );
+		foreach ( $options["checked_files"] as &$type ) {
+			// 0. field, 1. folder, 2. suffix, 3. extension, 4. mime-type
+			if ( sizeof( $type ) == 3 ) {
+				$type[3] = $type[2];
+				$type[2] = "";
+				$type[4] = "";
+			}
+			$file = $this->getDataFile( "$id$type[2]", $type[3], $type[1], $type[4], $options );
+			if ( $file ) {
+				$entry[ $type[0] ] = $file[1];
+			}
+		}
+	}
 
-    static function array_get($array, $key, $defaultValue)
-    {
-        return array_key_exists($key, $array) ? $array[$key] : $defaultValue;
-    }
+	static function array_get( $array, $key, $defaultValue ) {
+		return array_key_exists( $key, $array ) ? $array[ $key ] : $defaultValue;
+	}
 
-    static function startsWith($haystack, $needle)
-    {
-        return !strncmp($haystack, $needle, strlen($needle));
-    }
+	static function startsWith( $haystack, $needle ) {
+		return ! strncmp( $haystack, $needle, strlen( $needle ) );
+	}
 
 
-    /** Returns true if papercite uses a database backend */
-    function useDb()
-    {
-        return $this->options["use_db"];
-    }
+	/** Returns true if papercite uses a database backend */
+	function useDb() {
+		return $this->options["use_db"];
+	}
 
 
-    // Get the options to forward to bib2tpl
-    function getBib2TplOptions($options)
-    {
-        return array(
-            "anonymous-whole" => true, // for compatibility in the output
-            "group" => $options["group"],
-            "group_order" => $options["group_order"],
-            "sort" => $options["sort"],
-            "order" => $options["order"],
-            "key_format" => $options["key_format"],
-            "limit" => papercite::array_get($options, "limit", 0),
-            "highlight" => $options["highlight"]
-        );
-    }
+	// Get the options to forward to bib2tpl
+	function getBib2TplOptions( $options ) {
+		return array(
+			"anonymous-whole" => true, // for compatibility in the output
+			"group"           => $options["group"],
+			"group_order"     => $options["group_order"],
+			"sort"            => $options["sort"],
+			"order"           => $options["order"],
+			"key_format"      => $options["key_format"],
+			"limit"           => papercite::array_get( $options, "limit", 0 ),
+			"highlight"       => $options["highlight"]
+		);
+	}
 
-	public function formatBibliographyItems( $bibTexEntries, $format, $options ) {
 
+	public function formatBibliographyItems( $bibTexEntries, $format, $options = array(), $format_type = 'tpl' ) {
 		if ( func_num_args() < 3 ) {
 			$options = $this->options;
 		}
-
 		if ( func_num_args() > 3 ) {
 			$options['format_type'] = $format_type;
 			$options['format']      = $format;
 		}
-
 		$bib2tplOptions = $this->getBib2TplOptions( $options );
 		$bib_html       = $this->showEntries( $bibTexEntries, $bib2tplOptions, false, $options["bibtex_template"], $format, "bibtex", $options );
 
 		return $bib_html;
-
 	}
-
 
 	/**
 	 * Returns the content of a file (disk or post data)
@@ -279,22 +291,20 @@ class Papercite
 	/**
 	 * Show a set of entries
 	 *
-	 * @param refs An array of references
-	 * @param $bib2TplOptions The options to pass to bib2tpl
-	 * @param getKeys Keep track of the keys for a final substitution
+	 * @param $refs
+	 * @param $bib2TplOptions
+	 * @param $getKeys
 	 * @param $mainTpl
 	 * @param $formatTpl
 	 * @param $mode
-	 * @param $options
 	 *
 	 * @return mixed
 	 */
-	function showEntries( $refs,  $bib2TplOptions, $getKeys, $mainTpl, $formatTpl, $mode, $options = array() ) {
+	function showEntries( $refs, $bib2TplOptions, $getKeys, $mainTpl, $formatTpl, $mode, $options = array() ) {
 
 		if ( empty( $options ) ) {
 			$options = $this->options;
 		}
-
 		// Get the template files
 		$main   = self::getContent( "$mainTpl", "tpl", "tpl", "MIMETYPE", $options, true );
 		$format = self::getContent( "$formatTpl", "tpl", "format", "MIMETYPE", $options, true );
@@ -314,7 +324,7 @@ class Papercite
 		}
 
 
-
+		//require_once PAPERCITE_CUR_DIR . "/bib2tpl/bib2tpl-entry.php";
 
 		$bibtexEntryTemplate = new PaperciteBibtexEntryFormat( $format );
 
@@ -335,6 +345,7 @@ class Papercite
 
 		// Csl formatting
 		if ( isset( $options['format_type'] ) && $options['format_type'] == 'csl' ) {
+
 			$cslfile = papercite::getContent( $options['format'], "csl", CSL_STYLES_LOCATION, "text/x-csl", $options, true );
 			if ( empty( $cslfile ) ) {
 				throw new \Exception ( "Couldn't find CSL file " . $options['format'] . ".csl" );
@@ -348,17 +359,21 @@ class Papercite
 			$r['data'] = $refs;
 			$r['text'] = $csl_renderer->bibliography( array( 'data' => $csl_collection ) );
 		} else { // tpl formatting
+
 			// Now, check for attached files
 			if ( ! $refs ) {
 				// No references: return nothing
 				return "";
 			}
+
 			foreach ( $refs as &$ref ) {
 				// --- Add custom fields
 				$this->checkFiles( $ref, $options );
 			}
+
 			// This will set the key of each reference
 			$r = $bib2tpl->display( $refs );
+
 			// If we need to get the citation key back
 			if ( $getKeys ) {
 				foreach ( $refs as &$group ) {
@@ -373,6 +388,8 @@ class Papercite
 				}
 			}
 		}
+
+
 		// Process text in order to avoid some unexpected WordPress formatting
 		return str_replace( "\t", '  ', trim( $r["text"] ) );
 	}
@@ -385,115 +402,112 @@ class Papercite
 
 	/** Process a parsed command
 	 *
-     * @param $command The command (shortcode)
-	 * @param $options The options of the command
-     */
+	 * @param $command String The command (shortcode)
+	 * @param $options array The options of the command
+	 */
 
-    function processCommand($command, $options)
-    {
+	function processCommand( $command, $options ) {
 
+		// --- Process the commands ---
+		switch ( $command ) {
+			// display form, convert bibfilter to bibtex command and recursivelly call the same;-)
+			case "bibfilter":
+				// this should return html form and new command composed of (modified) $options_pairs
+				return $this->bibfilter( $options );
 
-        // --- Process the commands ---
-        switch ($command) {
-            // display form, convert bibfilter to bibtex command and recursivelly call the same;-)
-            case "bibfilter":
-                // this should return hmtl form and new command composed of (modified) $options_pairs
-                return $this->bibfilter($options);
+			// bibtex command:
+			case "bibtex":
+				$result = $this->getEntries( $options );
 
-            // bibtex command:
-            case "bibtex":
-                $result = $this->getEntries($options);
-                return $this->showEntries($result, $this->getBib2TplOptions( $options ), $this->getBib2TplOptions($options), false, $options["bibtex_template"], $options["format"], "bibtex");
+				return $this->showEntries( $result, $this->getBib2TplOptions( $options ), false, $options["bibtex_template"], $options["format"], "bibtex", $options );
 
-            // bibshow / bibcite commands
-            case "bibshow":
-                $data = $this->getData($options["file"], $options);
-                if (!$data) {
-                    return "<span style='color: red'>[Could not find the bibliography file(s)" .
-                        (current_user_can("edit_post") ? " with name [" . htmlspecialchars($options["file"]) . "]" : "") . "</span>";
-                }
+			// bibshow / bibcite commands
+			case "bibshow":
+				$data = $this->getData( $options["file"], $options );
+				if ( ! $data ) {
+					return "<span style='color: red'>[Could not find the bibliography file(s)" .
+					       ( current_user_can( "edit_post" ) ? " with name [" . htmlspecialchars( $options["file"] ) . "]" : "" ) . "</span>";
+				}
 
-                // TODO: replace this by a method call
-                $refs = array("__DB__" => array());
-                foreach ($data as $bib => &$outer) {
-                    // If we have a database backend for a bibtex, use it
-                    if (is_array($outer) && $outer[0] == "__DB__") {
-                        array_push($refs["__DB__"], $outer[1]);
-                    } else {
-                        foreach ($outer as &$entry) {
-                            if (isset($entry['cite'])) {
-                                $key = $entry["cite"];
-                                $refs[$key] = &$entry;
-                            }
-                        }
-                    }
-                }
+				// TODO: replace this by a method call
+				$refs = array( "__DB__" => array() );
+				foreach ( $data as $bib => &$outer ) {
+					// If we have a database backend for a bibtex, use it
+					if ( is_array( $outer ) && $outer[0] == "__DB__" ) {
+						array_push( $refs["__DB__"], $outer[1] );
+					} else {
+						foreach ( $outer as &$entry ) {
+							if ( isset( $entry['cite'] ) ) {
+								$key          = $entry["cite"];
+								$refs[ $key ] = &$entry;
+							}
+						}
+					}
+				}
 
-                $this->bibshow_tpl_options[] = $this->getBib2TplOptions($options);
-                $this->bibshow_options[] = $options;
-                array_push($this->bibshows, $refs);
-                $this->cites[] = array();
-                break;
+				$this->bibshow_tpl_options[] = $this->getBib2TplOptions( $options );
+				$this->bibshow_options[]     = $options;
+				array_push( $this->bibshows, $refs );
+				$this->cites[] = array();
+				break;
 
-            // Just cite
-            case "bibcite":
-                if (sizeof($this->bibshows) == 0) {
-                    if ($options["auto_bibshow"]) {
-                        // Automatically insert [bibshow] because of unexpected [bibcite]
-                        $generated_bibshow = array('[bibshow]', 'bibshow');
-                        $this->process($generated_bibshow);
-                        unset($generated_bibshow);
-                    } else {
-                        return "[<span title=\"Unknown reference: $options[key]\">?</span>]";
-                    }
-                }
+			// Just cite
+			case "bibcite":
+				if ( sizeof( $this->bibshows ) == 0 ) {
+					if ( $options["auto_bibshow"] ) {
+						// Automatically insert [bibshow] because of unexpected [bibcite]
+						$generated_bibshow = array( '[bibshow]', 'bibshow' );
+						$this->process( $generated_bibshow );
+						unset( $generated_bibshow );
+					} else {
+						return "[<span title=\"Unknown reference: $options[key]\">?</span>]";
+					}
+				}
 
-                $keys = preg_split("/,/", $options["key"]);
-                $cites = &$this->cites[sizeof($this->cites) - 1];
-                $returns = "";
+				$keys    = preg_split( "/,/", $options["key"] );
+				$cites   = &$this->cites[ sizeof( $this->cites ) - 1 ];
+				$returns = "";
 
-                foreach ($keys as $key) {
-                    if ($returns) {
-                        $returns .= ", ";
-                    }
+				foreach ( $keys as $key ) {
+					if ( $returns ) {
+						$returns .= ", ";
+					}
 
-                    // First, get the corresponding entry
-                    $num = Papercite::array_get($cites, $key, false);
+					// First, get the corresponding entry
+					$num = Papercite::array_get( $cites, $key, false );
 
-                    // Did we already cite this?
-                    if (!$num) {
-                        // no, register this using a custom ID (hopefully, there will be no conflict)
-                        $id = "BIBCITE%%" . $this->citesCounter . "%";
-                        $this->citesCounter++;
-                        $num = sizeof($cites);
-                        $cites[$key] = array($num, $id);
-                    } else {
-                        // yes, just copy the id
-                        $id = $num[1];
-                    }
-                    $returns .= "$id";
-                }
+					// Did we already cite this?
+					if ( ! $num ) {
+						// no, register this using a custom ID (hopefully, there will be no conflict)
+						$id = "BIBCITE%%" . $this->citesCounter . "%";
+						$this->citesCounter ++;
+						$num           = sizeof( $cites );
+						$cites[ $key ] = array( $num, $id );
+					} else {
+						// yes, just copy the id
+						$id = $num[1];
+					}
+					$returns .= "$id";
+				}
 
-                return "[$returns]";
+				return "[$returns]";
 
-            case "/bibshow":
-                return $this->end_bibshow();
-
-
-            default:
-                return "[error in papercite: unhandled]";
-        }
-    }
+			case "/bibshow":
+				return $this->end_bibshow();
 
 
-	    /** Main entry point using the matches array
-	     *
-	     * @param $matches array the shortcode matches to process
-	     *
-	     * @return String the markup txt from the processing
-	     * If the user as edit permissions, adds the error messages to the output
-	     */
+			default:
+				return "[error in papercite: unhandled]";
+		}
+	}
 
+	/** Main entry point using the matches array
+	 *
+	 * @param $matches array the shortcode matches to process
+	 *
+	 * @return String the markup txt from the processing
+	 * If the user as edit permissions, adds the error messages to the output
+	 */
 	function process( &$matches ) {
 		$r = $this->_process( $matches );
 		if ( current_user_can( "edit_post", get_the_ID() ) ) {
@@ -503,11 +517,10 @@ class Papercite
 		return $r;
 	}
 
-
-	    /**
-	     * Internal method
-	     * Main entry point: Handles a match in the post
-	     */
+	/**
+	 * Internal method
+	 * Main entry point: Handles a match in the post
+	 */
 	function _process( &$matches ) {
 
 		$debug = false;
@@ -527,6 +540,7 @@ class Papercite
 		// Get the command
 		$command = $matches[1];
 
+
 		// Get all the options pairs and store them
 		// in the $options array
 		$options_pairs = array();
@@ -536,7 +550,8 @@ class Papercite
 		// print "<pre>";
 		// print htmlentities(print_r($options_pairs,true));
 		// print "</pre>";
-
+//		print "\n$command,";
+//		print_r($options_pairs);
 		// ---Set preferences
 		// by order of increasing priority
 		// (0) Set in the shortcode
@@ -547,8 +562,15 @@ class Papercite
 
 		//d($matches);
 
-
 		$options            = $this->options;
+
+		// ensure that the options passed to the bibshow
+		// are reused on the following bibcite
+//		if ($this->lastCommand == 'bibshow' && $command=='bibcite') {
+//			$options = $this->lastCommandOptions;
+//		}
+
+
 		$options["filters"] = array();
 
 		foreach ( $options_pairs as $x ) {
@@ -557,12 +579,13 @@ class Papercite
 			if ( $x[1] == "template" ) {
 				// Special case of template: should overwrite the corresponding command template
 				$options["${command}_$x[1]"] = $value;
-			} elseif ( Papercite::startsWith( $x[1], "filter:" ) ) {
+			} elseif ( self::startsWith( $x[1], "filter:" ) ) {
 				$options["filters"][ substr( $x[1], 7 ) ] = $value;
 			} else {
 				$options[ $x[1] ] = $value;
 			}
 		}
+
 
 		// --- Compatibility issues: handling old syntax
 		if ( array_key_exists( "groupByYear", $options ) && ( strtoupper( $options["groupByYear"] ) == "TRUE" ) ) {
@@ -571,6 +594,10 @@ class Papercite
 		}
 
 		$data = null;
+
+//		$this->lastCommand = $command;
+//		$this->lastCommandOptions = $options;
+
 
 
 		return $this->processCommand( $command, $options );
@@ -586,9 +613,10 @@ class Papercite
 					return false;
 				}
 			}
-        }
-        return true;
-    }
+		}
+
+		return true;
+	}
 
 
 	function addMessage( $message ) {
@@ -681,7 +709,7 @@ class Papercite
 								} else {
 									$this->cache[ $biburi ] = &$parser->data;
 								}
-								break;
+
 						}
 
 
@@ -701,21 +729,23 @@ class Papercite
 	}
 
 	function listAllofAttribute( $attr ) {
-		    $entries          = $this->getEntries();
-		    $allEntriesByAttr = array_map( function ( $entry ) use ( $attr ) {
-			    $val = $entry[ $attr ];
-			    if ( is_object( $val ) && get_class( $val ) == 'PaperciteBibtexCreators' ) {
-				    $bibtexCreators = $val;
-				    $authors        = $bibtexCreators->toArray();
-				    return $authors;
-			    } else {
-				    return $val;
-			    }
-		    }, $entries );
-		    $allEntriesByAttr = array_flatten( $allEntriesByAttr, array() );
-		    $unique_values    = array_unique( $allEntriesByAttr );
-		    sort( $unique_values );
-		    return $unique_values;
+		$entries          = $this->getEntries();
+		$allEntriesByAttr = array_map( function ( $entry ) use ( $attr ) {
+			$val = $entry[ $attr ];
+			if ( is_object( $val ) && get_class( $val ) == 'PaperciteBibtexCreators' ) {
+				$bibtexCreators = $val;
+				$authors        = $bibtexCreators->toArray();
+
+				return $authors;
+			} else {
+				return $val;
+			}
+		}, $entries );
+		$allEntriesByAttr = array_flatten( $allEntriesByAttr, array() );
+		$unique_values    = array_unique( $allEntriesByAttr );
+		sort( $unique_values );
+
+		return $unique_values;
 	}
 
 	function parseBibTexString( $data, $processtitles = true ) {
@@ -740,12 +770,9 @@ class Papercite
 				default: // OSBiB parser
 					$parser = new PaperciteBibTexEntries();
 					$parser->processTitles( $processtitles );
-					if ( ! $parser->parse( $data ) ) {
-						continue;
-					} else {
+					if ( $parser->parse( $data ) ) {
 						$bibtexParsedData = &$parser->data;
 					}
-					break;
 			}
 
 
@@ -826,7 +853,12 @@ class Papercite
 	 * @return the entries in the bibliography
 	 *
 	 */
-	function getEntries( $options ) {
+	function getEntries( $options = array() ) {
+
+
+		if ( func_num_args() == 0 ) {
+			$options = $this->options;
+		}
 		// --- Filter the data
 		$result = array();
 		$dbs    = array();
@@ -884,35 +916,39 @@ class Papercite
 	 * Check the different paths where papercite data can be stored
 	 * and return the first match, starting by the preferred ones
 	 *
-	 *
-	 * This method searches:
-	 * 1) In the wordpress medias
-	 * 2) In the papercite folders
-	 *
 	 * @param $relfile The file name
 	 * @param $ext The extension for the file (file in folder)
 	 * @param $folder The folder that contains the file (file in folder)
 	 * @param $mimetype The mime-type (wordpress media)
 	 *
-	 * @return FALSE if no match, an array (path, URL)
 	 * @return either false (no match), or an array with the full
 	 * path and the URL
+	 *
+	 * This method searches:
+	 * 1) In the wordpress medias
+	 * 2) In the papercite folders
+	 *
+	 * @return FALSE if no match, an array (path, URL)
 	 */
+	static function getDataFile( $relfile, $ext, $folder, $mimetype, $options, $use_files = false ) {
+		$curdir = PAPERCITE_CONTENT_DIR;
 
-	    static function getDataFile( $relfile, $ext, $folder, $mimetype, $options, $use_files = false ) {
-		    $curdir = PAPERCITE_CONTENT_DIR;
-		    if ( $use_files || $options["use_files"] ) {
-			    // Rel-file as usual
-			    $relfile = "$folder/$relfile.$ext";
-			    if ( file_exists( $curdir . "/papercite-data/$relfile" ) ) {
-				    return array( $curdir . "/papercite-data/$relfile", null );
-			    }
-			    $path = $curdir . "/$relfile";
-			    if ( file_exists( $path ) ) {
-				    return array( $path, null );
-			    }
-		    }
-		    // Nothin' found
-		    return false;
-	    }
+		if ( $use_files || $options["use_files"] ) {
+			// Rel-file as usual
+			$relfile = "$folder/$relfile.$ext";
+
+
+			if ( file_exists( $curdir . "/papercite-data/$relfile" ) ) {
+				return array( $curdir . "/papercite-data/$relfile", null );
+			}
+
+			$path = $curdir . "/$relfile";
+			if ( file_exists( $path ) ) {
+				return array( $path, null );
+			}
+		}
+
+		// Nothin' found
+		return false;
+	}
 }
