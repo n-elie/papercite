@@ -4,7 +4,6 @@ _tests
 vendor
 *.lock
 .idea
-/package-lock.json
 *.html
 /tests/converted.csl.json
 /tests/converted.raw.json
