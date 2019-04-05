@@ -90,6 +90,14 @@ class PaperciteBibtexPages {
 		//return "pages {$this->start} : {$this->end}";
 		return $this->toCSL();
 	}
+
+
+
+	public function __toString() {
+		// TODO: Implement __toString() method.
+		//return "pages {$this->start} : {$this->end}";
+		return $this->toCSL();
+	}
 }
 
 ?>
