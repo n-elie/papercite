@@ -12,7 +12,7 @@
 Papercite helps to format bibtex entries to display a bibliography or
 cite papers.
 
-***This fork adds support for textual footnotes, besides references from bibliograhic databases.***
+***This fork adds support for textual footnotes, and CSL support***
 
 
 ## Description 
@@ -139,10 +139,14 @@ will result in a footnote being generated after the post text. The numbering of 
 ![The bibfilter command](https://ps.w.org/papercite/assets/screenshot-3.png)
 
 ## TODO list
-  * Support for the all in the bibliograpgy filter dropdown
-  * Support the new citation styles in XML format
-
+ * Impoving the settings page in the dashboard, using AJAX to fetch the formats listing
+ * Hability to Upload new CSL files directly to  the directory `papercite-data` 
 ## Changelog 
+
+### 0.6.0
+
+* CSL Support
+* Improved plugin settings page
 
 ### 0.5.20
 

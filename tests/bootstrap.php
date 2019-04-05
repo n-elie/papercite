@@ -5,6 +5,11 @@
  * @package Papercite
  */
 
+if ( ! defined( 'PAPERCITE_ROOT' ) ) {
+	require_once "papercite-root.php";
+}
+
+
 $_tests_dir = getenv( 'WP_TESTS_DIR' );
 
 if ( ! $_tests_dir ) {
@@ -14,6 +19,7 @@ if ( ! $_tests_dir ) {
 if ( ! file_exists( $_tests_dir . '/includes/functions.php' ) ) {
 	throw new Exception( "Could not find $_tests_dir/includes/functions.php, have you run bin/install-wp-tests.sh ?" );
 }
+
 
 // Give access to tests_add_filter() function.
 require_once $_tests_dir . '/includes/functions.php';

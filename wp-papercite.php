@@ -11,6 +11,7 @@ class WpPapercite extends Papercite {
 	//digfish: extra textual footnotes
 	var $textual_footnotes = array();
 	var $textual_footnotes_counter = 0;
+	var $cssStyles;
 
 	/**
 	 * Init is called before the first callback
@@ -144,6 +145,12 @@ class WpPapercite extends Papercite {
 	/**
 	 * Check the different paths where papercite data can be stored
 	 * and return the first match, starting by the preferred ones
+	 *
+	 * @param $filenamepart The file name (without the extension)
+	 * @param $ext The extension for the file (file in folder)
+	 * @param $folder The folder that contains the file (file in folder)
+	 * @param $mimetype The mime-type (wordpress media)
+	 *
 	 * @return either false (no match), or an array with the full
 	 * path and the URL
 	 *
@@ -151,20 +158,15 @@ class WpPapercite extends Papercite {
 	 * 1) In the wordpress medias
 	 * 2) In the papercite folders
 	 *
-	 * @param $relfile The file name
-	 * @param $ext The extension for the file (file in folder)
-	 * @param $folder The folder that contains the file (file in folder)
-	 * @param $mimetype The mime-type (wordpress media)
-	 *
 	 * @return FALSE if no match, an array (path, URL)
 	 */
-	static function getDataFile( $relfile, $ext, $folder, $mimetype, $options, $use_files = false ) {
+	static function getDataFile( $filenamepart, $ext, $folder, $mimetype, $options, $use_files = false ) {
 		global $wpdb;
 
 		if ( $options["use_media"] ) {
 			// Search for files in media
 			$filter = array(
-				'name'      => $relfile,
+				'name'      => $filenamepart,
 				'post_type' => 'attachment'
 			);
 			if ( ! empty( $mimetype ) ) {
@@ -183,7 +185,8 @@ class WpPapercite extends Papercite {
 
 		if ( $use_files || $options["use_files"] ) {
 			// Rel-file as usual
-			$relfile = "$folder/$relfile.$ext";
+			$filename = "$filenamepart.$ext";
+			$relfile  = "$folder/$filename";
 
 			// Multi-site case
 			if ( is_multisite() ) {
@@ -192,6 +195,14 @@ class WpPapercite extends Papercite {
 				if ( file_exists( $path ) ) {
 					return array( $path, WP_CONTENT_URL . $subpath );
 				}
+			}
+
+			// check for CSL files in papercite-data/csl
+			if ( $ext == 'csl' && file_exists( WP_CONTENT_DIR . "/papercite-data/csl/$filename" ) ) {
+				return array(
+					WP_CONTENT_DIR . "/papercite-data/csl/$filename",
+					WP_CONTENT_URL . "/papercite-data/csl/$filename"
+				);
 			}
 
 			if ( file_exists( WP_CONTENT_DIR . "/papercite-data/$relfile" ) ) {
@@ -242,9 +253,9 @@ class WpPapercite extends Papercite {
 	function getData( $biburis, $options ) {
 		global $wpdb, $papercite_table_name, $papercite_table_name_url;
 
-		$timeout       = $options["timeout"];
-		$processtitles = $options["process_titles"];
-		$sslverify     = $options["ssl_check"];
+		$timeout       = isset( $options["timeout"] ) ? $options['timeout'] : $this->options['timeout'];
+		$processtitles = isset( $options["process_titles"] ) ? $options["process_titles"] : $this->options['process_titles'];
+		$sslverify     = isset( $options["ssl_check"] ) ? $options["ssl_check"] : $this->options['ssl_check'];;
 
 		// Loop over the different given URIs
 		$bibFile = false;
@@ -309,7 +320,7 @@ class WpPapercite extends Papercite {
 					}
 
 					if ( ! empty( $data ) ) {
-						switch ( $this->options["bibtex_parser"] ) {
+						switch ( $options["bibtex_parser"] ) {
 							case "pear": // Pear parser
 								$this->_parser = new PaperciteStructures_BibTex( array(
 									'removeCurlyBraces' => true,
@@ -463,8 +474,12 @@ class WpPapercite extends Papercite {
 	 * @return the entries in the bibliography
 	 *
 	 */
-	function getEntries( $options ) {
+	function getEntries( $options = array() ) {
 		global $wpdb, $papercite_table_name;
+
+		if ( func_num_args() < 1 ) {
+			$options = $this->options;
+		}
 		// --- Filter the data
 		$entries = $this->getData( $options["file"], $options );
 		if ( $entries === false ) {
@@ -490,6 +505,7 @@ class WpPapercite extends Papercite {
 			$author_matcher = new PaperciteAuthorMatcher( Papercite::array_get( $options, "author", "" ) );
 			$result         = array();
 			$dbs            = array();
+
 			foreach ( $entries as $key => &$outer ) {
 				if ( is_array( $outer ) && $outer[0] == "__DB__" ) {
 					$dbs[] = $outer[1];
@@ -585,7 +601,7 @@ class WpPapercite extends Papercite {
 
 		ksort( $refs );
 
-		return $this->showEntries( array_values( $refs ), $options, $tplOptions, true, $options["bibshow_template"], $options["format"], "bibshow" );
+		return $this->showEntries( array_values( $refs ), $tplOptions, true, $options["bibshow_template"], $options["format"], "bibshow", $options);
 	}
 
 
@@ -621,32 +637,40 @@ class WpPapercite extends Papercite {
 	/**
 	 * Show a set of entries
 	 *
-	 * @param refs An array of references
-	 * @param options The options to pass to bib2tpl
-	 * @param getKeys Keep track of the keys for a final substitution
+	 * @param $refs
+	 * @param $bib2tplOptions
+	 * @param $getKeys
+	 * @param $mainTpl
+	 * @param $formatTpl
+	 * @param $mode
+	 *
+	 * @return mixed
 	 */
-	function showEntries( $refs, $goptions, $options, $getKeys, $mainTpl, $formatTpl, $mode ) {
+	function showEntries( $refs, $bib2tplOptions, $getKeys, $mainTpl, $formatTpl, $mode, $options = array() ) {
 
+		if ( empty( $options ) ) {
+			$options = $this->options;
+		}
 
 		// Get the template files
-		$main   = self::getContent( "$mainTpl", "tpl", "tpl", "MIMETYPE", $goptions, true );
-		$format = self::getContent( "$formatTpl", "tpl", "format", "MIMETYPE", $goptions, true );
+		$main   = self::getContent( "$mainTpl", "tpl", "tpl", "MIMETYPE", $options, true );
+		$format = self::getContent( "$formatTpl", "tpl", "format", "MIMETYPE", $options, true );
 
 		// Fallback to defaults if needed
 		if ( ! $main ) {
-			$main = self::getContent( self::$default_options["${mode}_template"], "tpl", "tpl", "MIMETYPE", $goptions, true );
+			$main = self::getContent( self::$default_options["${mode}_template"], "tpl", "tpl", "MIMETYPE", $options, true );
 			if ( ! $main ) {
 				throw new \Exception( "Could not find template ${mode}_template" );
 			}
 		}
 		if ( ! $format ) {
-			$format = self::getContent( self::$default_options["format"], "tpl", "format", "MIMETYPE", $goptions, true );
+			$format = self::getContent( self::$default_options["format"], "tpl", "format", "MIMETYPE", $options, true );
 			if ( ! $main ) {
 				throw new \Exception( "Could not find template " . self::$default_options["format"] );
 			}
 		}
 
-		require_once "bib2tpl/bibtex_converter.php";
+		//require_once "bib2tpl/bibtex_converter.php";
 
 		$bibtexEntryTemplate = new PaperciteBibtexEntryFormat( $format );
 
@@ -659,38 +683,61 @@ class WpPapercite extends Papercite {
 		}
 
 		// Convert (also set the citation key)
-		$bib2tpl = new BibtexConverter( $options, $main, $bibtexEntryTemplate );
+		$bib2tpl = new TplConverter( $bib2tplOptions, $main, $bibtexEntryTemplate );
 		$bib2tpl->setGlobal( "WP_PLUGIN_URL", WP_PLUGIN_URL );
 		$bib2tpl->setGlobal( "PAPERCITE_DATA_URL", self::getCustomDataDirectory() );
 
-		// Now, check for attached files
-		if ( ! $refs ) {
-			// No references: return nothing
-			return "";
-		}
+		$r = array();
 
-		foreach ( $refs as &$ref ) {
-			// --- Add custom fields
-			$this->checkFiles( $ref, $goptions );
-		}
+		if ( isset( $options['format_type'] ) && $options['format_type'] == 'csl' ) {
+			$cslfile = self::getContent( $options['format'], "csl", CSL_STYLES_LOCATION, "text/x-csl", $options, true );
+			if ( empty( $cslfile ) ) {
+				$fallback = "apa";
+				$this->addMessage( "Couldn't find CSL file  {$options['format']}.csl. <br> Resorting to $fallback ." );
+				$cslfile_location  = plugin_dir_path( __FILE__ ) . CSL_STYLES_LOCATION . "/$fallback.csl";
+				$cslfile           = file_get_contents( $cslfile_location );
+				$options['format'] = $fallback;
+			}
+			$csl_defs               = $cslfile;
+			$bib2csl                = new CslConverter();
+			$csl_collection         = $bib2csl->convert( $refs );
+			$cslrenderer            = new CiteProcRenderer();
+			$cslrenderer->styleName = $options['format'];
+			$cslrenderer->setStyleDefs( $csl_defs );
+			$r['data']       = $refs;
+			$r['text']       = $cslrenderer->bibliography( array( 'data' => $csl_collection ) );
+			$this->cssStyles = $cslrenderer->cssStyles();
 
-		// This will set the key of each reference
-		$r = $bib2tpl->display( $refs );
+		} else {
 
-		// If we need to get the citation key back
-		if ( $getKeys ) {
-			foreach ( $refs as &$group ) {
-				foreach ( $group as &$ref ) {
-					$this->keys[] = $ref["pKey"];
-					if ( $goptions["show_links"] ) {
-						$this->keyValues[] = "<a class=\"papercite_bibcite\" href=\"#paperkey_{$ref["papercite_id"]}\">{$ref["key"]}</a>";
-					} else {
-						$this->keyValues[] = $ref["key"];
+			// Now, check for attached files
+			if ( ! $refs ) {
+				// No references: return nothing
+				return "";
+			}
+
+			foreach ( $refs as &$ref ) {
+				// --- Add custom fields
+				$this->checkFiles( $ref, $options );
+			}
+
+			// This will set the key of each reference
+			$r = $bib2tpl->display( $refs );
+
+			// If we need to get the citation key back
+			if ( $getKeys ) {
+				foreach ( $refs as &$group ) {
+					foreach ( $group as &$ref ) {
+						$this->keys[] = $ref["pKey"];
+						if ( $options["show_links"] ) {
+							$this->keyValues[] = "<a class=\"papercite_bibcite\" href=\"#paperkey_{$ref["papercite_id"]}\">{$ref["key"]}</a>";
+						} else {
+							$this->keyValues[] = $ref["key"];
+						}
 					}
 				}
 			}
 		}
-
 
 		// Process text in order to avoid some unexpected WordPress formatting
 		return str_replace( "\t", '  ', trim( $r["text"] ) );
@@ -707,14 +754,16 @@ class WpPapercite extends Papercite {
 	 */
 	function bibfilter( $options ) {
 		// create form with custom types and authors
-		global $post;
+		global $post, $papercite;
 
 		$selected_author = false;
 		$selected_type   = false;
 
 		$original_authors = Papercite::array_get( $options, "author", "" );
+
 		$original_allow   = Papercite::array_get( $options, "allow", "" );
 
+		// filter according to the values selected on dropdowns
 		if ( isset( $_POST ) && ( Papercite::array_get( $_POST, "papercite_post_id", 0 ) == $post->ID ) ) {
 			if ( isset( $_POST["papercite_author"] ) && ! empty( $_POST["papercite_author"] ) ) {
 				$selected_author = ( $options["author"] = $_POST["papercite_author"] );
@@ -726,8 +775,11 @@ class WpPapercite extends Papercite {
 		}
 
 		$result = $this->getEntries( $options );
+		//d($selected_author,$selected_type);
 		ob_start();
 		?>
+		<?php  ?>
+
         <form method="post" accept-charset="UTF-8">
             <input type="hidden" name="papercite_post_id" value="<?php echo $post->ID ?>">
             <table style="border-top: solid 1px #eee; border-bottom: solid 1px #eee; width: 100%">
@@ -736,7 +788,19 @@ class WpPapercite extends Papercite {
                     <td><select name="papercite_author" id="papercite_author">
                             <option value="">ALL</option>
 							<?php
-							$authors = preg_split( "#\s*\\|\s*#", $original_authors );
+							if ( empty( $original_authors ) ) {
+								// fill in with all the authors
+								$author_results = $papercite->listAllofAttribute( 'author' );
+
+								$surnames = array();
+								foreach ( $author_results as $author ) {
+
+									$surnames [] = $author;
+								}
+								$authors = $surnames;
+							} else {
+								$authors = preg_split( "#\s*\\|\s*#", $original_authors );
+							};
 							if ( Papercite::array_get( $options, "sortauthors", 0 ) ) {
 								sort( $authors );
 							}
@@ -749,15 +813,21 @@ class WpPapercite extends Papercite {
 								print ">$author</option>";
 							}
 							?>
-                        </select></td>
+                        </select>
+                    </td>
 
                     <td>Type:</td>
                     <td><select name="papercite_allow" id="papercite_type">
                             <option value="">ALL</option>
 							<?php
-							$types = preg_split( "#\s*,\s*#", $original_allow );
+							if ( empty( $original_allow ) ) {
+								$types = $papercite->listAllofAttribute( 'entrytype' );
+							} else {
+								$types = preg_split( "#\s*,\s*#", $original_allow );
+							}
+
 							foreach ( $types as $type ) {
-								print "<option value=\"" . htmlentities( $type, ENT_QUOTES, "UTF-8" ) . "\"";
+								print "<option value='" . htmlentities( $type, ENT_QUOTES, "UTF-8" ) . "' ";
 								if ( $selected_type == $type ) {
 									print " selected=\"selected\"";
 								}
@@ -768,18 +838,13 @@ class WpPapercite extends Papercite {
                     <td><input type="submit" value="Filter"/></td>
                 </tr>
             </table>
+
         </form>
 
 		<?php
 
 		$entries_output = $this->showEntries(
-			$result,
-			$options,
-			$this->getBib2TplOptions( $options ),
-			false,
-			$options["bibtex_template"],
-			$options["format"],
-			"bibtex"
+			$result, $this->getBib2TplOptions( $options ), false, $options["bibtex_template"], $options["format"], "bibtex"
 		);
 
 

@@ -163,8 +163,9 @@ class PaperciteBibTexEntries {
 		if($oldString[$lg-1] == "}" || $oldString[$lg-1] == ")" || $oldString[$lg-1] == ",")
 			$oldString = substr($oldString,0,$lg-1);
 		// $oldString = rtrim($oldString, "}),");
-		$split = preg_split("/=/", $oldString, 2);
+		$split  = preg_split("/=/", $oldString, 2);
 		$string = $split[1];
+		$values = array();
 		while($string)
 		{
 			list($entry, $string) = $this->fieldSplit($string);

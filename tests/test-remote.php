@@ -1,6 +1,11 @@
 <?php
 
+namespace Papercite\Tests;
 require_once dirname(__FILE__) . '/common.inc.php';
+
+use DOMXPath;
+use Papercite;
+
 
 class RemoteTest extends PaperciteTestCase {
 

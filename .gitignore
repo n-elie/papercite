@@ -3,3 +3,5 @@ _repos
 _tests
 vendor
 composer.lock
+.idea
+*sublime*
