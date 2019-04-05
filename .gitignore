@@ -10,3 +10,5 @@ composer.lock
 /tests/converted.raw.json
 /tests/papercite-cache/
 /utils/my-converter.php
+ppc_*
+*.bib
