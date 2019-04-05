@@ -1,0 +1,2830 @@
+[
+    {
+        "type": "book",
+        "author": [
+            {
+                "given": "Adalberto",
+                "family": "Alves",
+                "suffix": ""
+            }
+        ],
+        "editor": [
+            {
+                "given": "Imprensa Nacional Casa",
+                "family": "Moeda",
+                "suffix": ""
+            }
+        ],
+        "edition": "1",
+        "title": "Dicion\u00e1rio de Arabismos da L\u00edngua Portuguesa - Adalberto Alves - Google Livros",
+        "URL": "https:\/\/books.google.pt\/books?id=LzveAgAAQBAJ&printsec=frontcover&hl=pt-PT&source=gbs_vpt_buy#v=onepage&q&f=false",
+        "id": "aalves2013",
+        "issued": {
+            "date-parts": [
+                [
+                    "2013"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Olh\u00e3o",
+        "author": [
+            {
+                "given": "Ad\u00e9rito",
+                "family": "Vaz",
+                "suffix": ""
+            }
+        ],
+        "edition": "1",
+        "title": "Quem foi Sebasti\u00e3o Martins Mestre na hist\u00f3ria do sotavento algarvio",
+        "id": "AderitoVaz1986",
+        "issued": {
+            "date-parts": [
+                [
+                    "1986"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Leiden",
+        "author": [
+            {
+                "given": "Dionisius",
+                "family": "Agius",
+                "suffix": ""
+            }
+        ],
+        "title": "Classic Ships of Islam",
+        "id": "Agius2008a",
+        "issued": {
+            "date-parts": [
+                [
+                    "2008"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Ana Isabel Nascimento",
+                "family": "Santos",
+                "suffix": ""
+            }
+        ],
+        "title": "Tavira, Patrim\u00f3nios do Mar - da Ribeira \u00e0 Casa Nobre de Quinhentos - o caso dos Telhados de Tesouro",
+        "URL": "https:\/\/dspace.uevora.pt\/rdpc\/handle\/10174\/18155",
+        "id": "AISantos2015",
+        "issued": {
+            "date-parts": [
+                [
+                    "2015"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Coimbra",
+        "author": [
+            {
+                "given": "Jorge (Universidade Coimbra)",
+                "family": "Alarc\u00e3o",
+                "suffix": ""
+            }
+        ],
+        "title": "A Lusit\u00e2nia e a Gal\u00e9cia: do s\u00e9c.II a.C. ao s\u00e9c.VI d.C.",
+        "doi": "https:\/\/doi.org\/10.14195\/978-989-26-1479-3",
+        "URL": "http:\/\/hdl.handle.net\/10316.2\/44227",
+        "id": "Alarcao2018",
+        "issued": {
+            "date-parts": [
+                [
+                    "2017"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "H\u00e9lio",
+                "family": "Alves",
+                "suffix": ""
+            }
+        ],
+        "title": "Jer\u00f3nimo Corte-Real, a Evolu\u00e7\u00e3o da sua Arte",
+        "volume": "2",
+        "URL": "http:\/\/ler.letras.up.pt\/uploads\/ficheiros\/2963.pdf",
+        "id": "Alves2005",
+        "issued": {
+            "date-parts": [
+                [
+                    "2005"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "author": [
+            {
+                "given": "Pedro",
+                "family": "Alvim",
+                "suffix": ""
+            }
+        ],
+        "title": "Recintos megal\u00edticos da regi\u00e3o da serra de Monfurado e os \u00abCabe\u00e7os do Meio-Mundo\u00bb: monumentos, paisagem e cultura no Neol\\t\u0301ico alentejano",
+        "URL": "https:\/\/s3.amazonaws.com\/academia.edu.documents\/7737156\/meio mundo.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1544382579&Signature=YgmYSGIv0SRP10OEKHpfO%2FXwc%2FM%3D&response-content-disposition=inline%3B filename%3DRecintos_megaliticos_da_regiao",
+        "id": "Alvim2004",
+        "issued": {
+            "date-parts": [
+                [
+                    "2004"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "author": [
+            {
+                "given": "Pedro",
+                "family": "Alvim",
+                "suffix": ""
+            }
+        ],
+        "title": "De nascente para poente: reflex\u00f5es sobre a sintaxe da arquitectura megal\u00edtica no Alentejo",
+        "URL": "http:\/\/www.chaia.uevora.pt\/uploads\/pdfs\/c9f3536d05cf7438b3b2bacef1654a04a49e9359.pdf",
+        "id": "Alvim2013",
+        "issued": {
+            "date-parts": [
+                [
+                    "2013"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Rui Palmilha",
+                "family": "Amaro",
+                "suffix": ""
+            }
+        ],
+        "title": "Penso, logo existe Tavira - P\u00e1gina do Facebook",
+        "URL": "https:\/\/www.facebook.com\/ruipalmilhaamaro\/posts\/456861358474878",
+        "id": "AmaroFB2019",
+        "issued": {
+            "date-parts": [
+                [
+                    "2019"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "publisher-place": "Vila Real de Santo Ant\u00f3nio",
+        "author": [
+            {
+                "given": "Arnaldo Casimiro",
+                "family": "Anica",
+                "suffix": ""
+            }
+        ],
+        "title": "O solar da Bela-Fria foi da fam\u00edlia Vaz-Velho",
+        "id": "Anica1989JornaldoAlgarve",
+        "issued": {
+            "date-parts": [
+                [
+                    "1989"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Tavira",
+        "author": [
+            {
+                "given": "Arnaldo Casimiro",
+                "family": "Anica",
+                "suffix": ""
+            }
+        ],
+        "editor": [
+            {
+                "given": "C\u00e2mara Municipal",
+                "family": "Tavira",
+                "suffix": ""
+            }
+        ],
+        "title": "Tavira e o seu Termo - memorando hist\u00f3rico",
+        "id": "Anica1993",
+        "issued": {
+            "date-parts": [
+                [
+                    "1993"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Tavira",
+        "author": [
+            {
+                "given": "Arnaldo Casimiro",
+                "family": "Anica",
+                "suffix": ""
+            }
+        ],
+        "editor": [
+            {
+                "given": "Munic\u00edpio",
+                "family": "Tavira",
+                "suffix": ""
+            }
+        ],
+        "edition": "1",
+        "title": "Tavira e o seu Termo - memorando hist\u00f3rico",
+        "volume": "2",
+        "id": "Anica2001",
+        "issued": {
+            "date-parts": [
+                [
+                    "2001"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Cabanas de Tavira",
+        "author": [
+            {
+                "given": "Arnaldo Casimiro",
+                "family": "Anica",
+                "suffix": ""
+            }
+        ],
+        "editor": [
+            {
+                "given": "Junta Freguesia Cabanas",
+                "family": "Tavira",
+                "suffix": ""
+            }
+        ],
+        "edition": "1",
+        "title": "Monografia da freguesia de Cabanas de Tavira",
+        "id": "Anica2011",
+        "issued": {
+            "date-parts": [
+                [
+                    "2011"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Faculdade DE",
+                "family": "Teologia Mestrado Integrado Em Teologia",
+                "suffix": ""
+            },
+            {
+                "given": "\\textordmasculine",
+                "family": "FERNANDO MANUEL MARQUES APOLIN\u00c1RIO",
+                "suffix": ""
+            },
+            {
+                "given": "Doutor",
+                "family": "Peter Damian Francis Stiwell",
+                "suffix": ""
+            }
+        ],
+        "title": "UNIVERSIDADE CAT\u00d3LICA PORTUGUESA A Ordem de Santiago",
+        "URL": "http:\/\/repositorio.ucp.pt\/bitstream\/10400.14\/15148\/1\/A Ordem de Santiago - A Arte como Manisfesta\u00e7\u00e3o de Culto e C.pdf",
+        "id": "Apolinario2013",
+        "issued": {
+            "date-parts": [
+                [
+                    "2013"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Olivenza",
+        "author": [
+            {
+                "given": "Asociaci\u00f3n Limbo Cultura",
+                "family": "(Olivenza)",
+                "suffix": ""
+            }
+        ],
+        "title": "I Jornadas sobre Fortificaciones Abaluartadas",
+        "id": "AsociacionLimboCulturaOlivenza2018",
+        "issued": {
+            "date-parts": [
+                [
+                    "2018"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Tavira",
+        "author": [
+            {
+                "given": "Ad\u00e9rito",
+                "family": "Vaz",
+                "suffix": ""
+            }
+        ],
+        "editor": [
+            {
+                "given": "",
+                "family": "Author",
+                "suffix": ""
+            }
+        ],
+        "edition": "1",
+        "title": "O Bras\u00e3o dos Vaz e dos Velho e a liga\u00e7\u00e3o aos Corte Reais na Hist\u00f3ria da Concei\u00e7\u00e3o de Tavira",
+        "id": "AVaz2006",
+        "issued": {
+            "date-parts": [
+                [
+                    "2006"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Porto",
+        "author": [
+            {
+                "given": "Paula",
+                "family": "Ros\u00e1rio Bastos; Alveirinho Dias  Jo\u00e3o; Bernardo",
+                "suffix": ""
+            }
+        ],
+        "title": "Historic Roots for Barrier Island Occupation in the Ria Formosa",
+        "URL": "https:\/\/www.researchgate.net\/publication\/237726813_Historic_Roots_for_Barrier_Island_Occupation_in_the_Ria_Formosa",
+        "id": "BastosAlveirinhoBernando2002",
+        "issued": {
+            "date-parts": [
+                [
+                    "2002"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "chapter",
+        "author": [
+            {
+                "given": "Maria \u00c2ngela Rocha",
+                "family": "Beirante",
+                "suffix": ""
+            }
+        ],
+        "title": "\u00c9vora na Idade M\u00e9dia",
+        "URL": "http:\/\/www.bdalentejo.net\/BDAObra\/BDADigital\/Obra.aspx?id=596#",
+        "id": "Beirante1995",
+        "issued": {
+            "date-parts": [
+                [
+                    "1995"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Maria De Sousa",
+                "family": "Blanc",
+                "suffix": ""
+            }
+        ],
+        "title": "DIVULGAR ARTE E CULTURA EM MUNDOS VIRTUAIS: MUSEU VIRTUAL DE TAVIRA",
+        "URL": "https:\/\/repositorioaberto.uab.pt\/bitstream\/10400.2\/4434\/1\/TMECLOA_HelenaBlanc.pdf",
+        "id": "Blanc2014",
+        "issued": {
+            "date-parts": [
+                [
+                    "2014"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "",
+                "family": "Boscaglia  Fabrizio",
+                "suffix": ""
+            }
+        ],
+        "title": "A presen\u00e7a \u00e1rabe-isl\u00e2mica em Fernando Pessoa",
+        "URL": "http:\/\/repositorio.ul.pt\/handle\/10451\/18257",
+        "id": "Boscaglia2014",
+        "issued": {
+            "date-parts": [
+                [
+                    "2014"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Fabrizio",
+                "family": "Boscaglia",
+                "suffix": ""
+            }
+        ],
+        "title": "Fernando Pessoa and Islam: an introductory overview with a critical edition of twelve documents",
+        "URL": "https:\/\/www.academia.edu\/27100224\/Fernando_Pessoa_and_Islam_an_introductory_overview_with_a_critical_edition_of_twelve_documents",
+        "id": "Boscaglia2016",
+        "issued": {
+            "date-parts": [
+                [
+                    "2016"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "manuscript",
+        "author": [
+            {
+                "given": "",
+                "family": "Boxer",
+                "suffix": ""
+            }
+        ],
+        "title": "ADMIRAL JOAO PEREIRA CORTE-REAL AND THE CONSTRUCTION OF PORTU- GUESE EAST-INDIAMEN IN THE EARLY SEVENTEENTH CENTURY",
+        "id": "Boxer1940",
+        "issued": {
+            "date-parts": [
+                [
+                    "1940"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Br\u00edgida",
+                "family": "Baptista",
+                "suffix": ""
+            }
+        ],
+        "title": "ANTIGO ARRAIAL DA ARMA\u00c7\u00c3O DE ATUM DO BARRIL - ALGARVE UMA SENSIBILIZA\u00c7\u00c3O PARA O PATRIM\u00d3NIO MAR\u00cdTIMO",
+        "URL": "https:\/\/www.academia.edu\/34983120\/ANTIGO_ARRAIAL_DA_ARMA\u00c7\u00c3O_DE_ATUM_DO_BARRIL_-_ALGARVE_UMA_SENSIBILIZA\u00c7\u00c3O_PARA_O_PATRIM\u00d3NIO_MAR\u00cdTIMO?fbclid=IwAR3HYXlLy7W4qxTQ6abpvvMOjJaeXHHoXndx1kds5HslYSPWmPJ-njBU8kg",
+        "id": "Brigida2016",
+        "issued": {
+            "date-parts": [
+                [
+                    "2016"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Tavira",
+        "author": [
+            {
+                "given": "Francisco Ant\u00f3nio Silva",
+                "family": "Cabrita",
+                "suffix": ""
+            }
+        ],
+        "title": "Mem\u00f3ria dos Desastrosos Acontecimentos em Albufeira por ocasi\u00e3o das invas\u00f5es das guerrilhas em 1833",
+        "id": "Cabrita1894",
+        "issued": {
+            "date-parts": [
+                [
+                    "1894"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Manuel",
+                "family": "Calado",
+                "suffix": ""
+            },
+            {
+                "given": "Leonor",
+                "family": "Rocha",
+                "suffix": ""
+            }
+        ],
+        "title": "Menires e Neolitiza\u00e7\u00e3o",
+        "URL": "http:\/\/dspace.uevora.pt\/rdpc\/bitstream\/10174\/2271\/1\/Art11-Xelb7.pdf",
+        "id": "Calado2006",
+        "issued": {
+            "date-parts": [
+                [
+                    "2006"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Manuel",
+                "family": "Calado",
+                "suffix": ""
+            }
+        ],
+        "title": "Parque Do Megalitismo De \u00c9vora : Uma Utopia Alentejana",
+        "URL": "https:\/\/dspace.uevora.pt\/rdpc\/bitstream\/10174\/2233\/1\/Art4-Praxis3.pdf",
+        "id": "Calado2008",
+        "issued": {
+            "date-parts": [
+                [
+                    "2008"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Jo\u00e3o (Universidade Aberta)",
+                "family": "Cardoso",
+                "suffix": ""
+            },
+            {
+                "given": "Outeiro",
+                "family": "Redondo",
+                "suffix": ""
+            }
+        ],
+        "title": "Cromeleque de Portela de Mogos ( concelho de \u00c9vora ) \u2013 estudos geoarqueol\u00f3gicos e paleobot\u00e2nicos",
+        "volume": "2",
+        "URL": "https:\/\/www.researchgate.net\/publication\/313771509_Cromeleque_de_Portela_de_Mogos_concelho_de_Evora_-_estudos_geoarqueologicos_e_paleobotanicos",
+        "id": "Cardoso2000",
+        "issued": {
+            "date-parts": [
+                [
+                    "2000"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Jo\u00e3o Lu\u00eds (Universidade Aberta)",
+                "family": "Cardoso",
+                "suffix": ""
+            }
+        ],
+        "title": "Vida e obras de Est\u00e1cio da Veiga",
+        "doi": "10.1002\/cc",
+        "volume": "4",
+        "URL": "https:\/\/www.academia.edu\/10233543\/Vida_e_Obras_de_Est\u00e1cio_da_Veiga",
+        "id": "cardoso2007",
+        "issued": {
+            "date-parts": [
+                [
+                    "2007"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "report",
+        "publisher-place": "Oeiras",
+        "author": [
+            {
+                "given": "Jo\u00e3o Lu\u00eds (Universidade Aberta)",
+                "family": "Cardoso",
+                "suffix": ""
+            }
+        ],
+        "publisher": "Centro de Estudos Arqueol\u00f3gicas de Oeiras",
+        "title": "Nos 190 anos do Nascimento de Sebasti\u00e3o Philippes Martins Est\u00e1cio da Veiga (1828-1891)",
+        "URL": "https:\/\/repositorioaberto.uab.pt\/bitstream\/10400.2\/7677\/1\/Jo\u00e3o Lu\u00eds Cardoso 3.pdf",
+        "id": "cardoso2018",
+        "issued": {
+            "date-parts": [
+                [
+                    "2018"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Antonio",
+                "family": "Carvalho",
+                "suffix": ""
+            },
+            {
+                "given": "L\u00edvia Cristina",
+                "family": "Coito",
+                "suffix": ""
+            },
+            {
+                "given": "Rui Roberto",
+                "family": "Almeida",
+                "suffix": ""
+            },
+            {
+                "given": "Susana",
+                "family": "Toureiro",
+                "suffix": ""
+            },
+            {
+                "given": "Museu Nacional Arqueologia",
+                "family": "(Portugal)",
+                "suffix": ""
+            }
+        ],
+        "title": "Loul\u00e9 : territ\u00f3rios, mem\u00f3rias, identidades = territory, memory, identity = territoires, m\u00e9moires, identit\u00e9s",
+        "URL": "http:\/\/repositorio.ul.pt\/handle\/10451\/35166?mode=full",
+        "id": "Carvalho2017",
+        "issued": {
+            "date-parts": [
+                [
+                    "2017"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Ana Rita Carvalho",
+                "family": "Afonso",
+                "suffix": ""
+            }
+        ],
+        "title": "A obra gr\u00e1fica de Carlos Augusto Lyster Franco",
+        "URL": "http:\/\/repositorio.ul.pt\/handle\/10451\/7783",
+        "id": "CarvalhoAfonso2008",
+        "issued": {
+            "date-parts": [
+                [
+                    "2008"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Carlos",
+                "family": "Castilho Pais",
+                "suffix": ""
+            }
+        ],
+        "title": "As viagens por terra ao\/do Oriente e a tradu\u00e7\u00e3o oral (S\u00e9c. XV e S\u00e9c. XVI)",
+        "doi": "10.5007\/2175-7992.2016v23n1p96",
+        "URL": "http:\/\/dx.doi.org\/10.5007\/2175-7992.2016v23n1p96",
+        "id": "CastilhoPais2016"
+    },
+    {
+        "type": "article",
+        "publisher-place": "Tavira",
+        "author": [
+            {
+                "given": "(Museu",
+                "family": "Tavira)",
+                "suffix": ""
+            }
+        ],
+        "title": "\u201cTavira, Patrim\u00f3nios do Mar\u201d by Museu Municipal de Tavira - issuu",
+        "URL": "https:\/\/issuu.com\/museum_tavira\/docs\/catalogo_tavira_mar",
+        "id": "cmt2008",
+        "issued": {
+            "date-parts": [
+                [
+                    "2008"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Maria Helena Cruz",
+                "family": "Coelho",
+                "suffix": ""
+            }
+        ],
+        "title": "Balan\u00e7o sobre a hist\u00f3ria rural produzida em Portugal nas \u00faltimas d\u00e9cadas",
+        "volume": "2",
+        "URL": "https:\/\/estudogeral.sib.uc.pt\/bitstream\/10316\/21433\/1\/Balan\u00e7o sobre a hist\u00f3ria rural produzida em Portugal nas \u00faltimas d\u00e9cadas.pdf",
+        "id": "Coelho1997",
+        "issued": {
+            "date-parts": [
+                [
+                    "1997"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "chapter",
+        "author": [
+            {
+                "given": "Fernando Peixoto",
+                "family": "Fonseca",
+                "suffix": ""
+            }
+        ],
+        "title": "Cr\u00f3nica da Conquista do Algarve (Parte 1)",
+        "volume": "1",
+        "URL": "http:\/\/www.csarmento.uminho.pt\/docs\/amap\/bth\/bth1988_04.pdf",
+        "id": "conquista-algarve-2",
+        "issued": {
+            "date-parts": [
+                [
+                    "1978"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Autor",
+                "family": "Correia",
+                "suffix": ""
+            },
+            {
+                "given": "Jos\u00e9 Eduardo",
+                "family": "Horta",
+                "suffix": ""
+            }
+        ],
+        "title": "O lugar de Vila Real de Santo Ant\u00f3nio na hist\u00f3ria do urbanismo portugu\u00eas",
+        "doi": "10.14195\/0874-6168_9_5",
+        "URL": "http:\/\/hdl.handle.net\/10316.2\/37888",
+        "id": "Correia2005",
+        "issued": {
+            "date-parts": [
+                [
+                    "2005"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Tavira",
+        "author": [
+            {
+                "given": "Fausto",
+                "family": "Costa",
+                "suffix": ""
+            }
+        ],
+        "editor": [
+            {
+                "given": "",
+                "family": "Biz\u00e2ncio",
+                "suffix": ""
+            }
+        ],
+        "edition": "1",
+        "title": "A pesca do Atum nas Arma\u00e7\u00f5es da Costa Algrvia",
+        "id": "Costa2000",
+        "issued": {
+            "date-parts": [
+                [
+                    "2000"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Lese Mary",
+                "family": "Costa",
+                "suffix": ""
+            }
+        ],
+        "title": "O ATUM EM PORTUGAL DE 1896 a 2011: CONTRIBUTOS PARA A SUA HIST\u00d3RIA AMBIENTAL, ECOL\u00d3GICA E ECON\u00d3MICA",
+        "URL": "http:\/\/repositorio.ul.pt\/bitstream\/10451\/9817\/1\/ulfc103169_tm_lese_costa.pdf",
+        "id": "Costa2013",
+        "issued": {
+            "date-parts": [
+                [
+                    "2013"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Jaquelina",
+                "family": "Covaneiro",
+                "suffix": ""
+            },
+            {
+                "given": "Sandra",
+                "family": "Cavaco",
+                "suffix": ""
+            }
+        ],
+        "title": "EVOLU\u00c7\u00c3O DO ESPA\u00c7O URBANO DA CIDADE DE TAVIRA: RESULTADOS PRELIMINARES",
+        "URL": "http:\/\/www.scientiaantiquitatis.uevora.pt\/index.php\/SA\/article\/view\/81",
+        "id": "Covaneiro2017",
+        "issued": {
+            "date-parts": [
+                [
+                    "2017"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Henrique",
+                "family": "David",
+                "suffix": ""
+            },
+            {
+                "given": "Jos\u00e9 Augusto",
+                "family": "Pizarro",
+                "suffix": ""
+            }
+        ],
+        "title": "A conquista de Faro - o reavivar de uma quest\u00e3o",
+        "URL": "http:\/\/ler.letras.up.pt\/uploads\/ficheiros\/6410.pdf",
+        "id": "David1987",
+        "issued": {
+            "date-parts": [
+                [
+                    "1987"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "report",
+        "publisher-place": "Faro",
+        "author": [
+            {
+                "given": "Coordena\u00e7\u00e3o",
+                "family": "De Ant\u00f3nio",
+                "suffix": ""
+            },
+            {
+                "given": "Rosa",
+                "family": "Mendes",
+                "suffix": ""
+            },
+            {
+                "given": "",
+                "family": "Paulo Dias Oliveira",
+                "suffix": ""
+            },
+            {
+                "given": "Cristina",
+                "family": "F\u00e9",
+                "suffix": ""
+            }
+        ],
+        "publisher": "Universidade do Algarve",
+        "title": "Contributo para a hist\u00f3ria da sa\u00fade no algarve",
+        "URL": "https:\/\/sapientia.ualg.pt\/bitstream\/10400.1\/4151\/1\/Promontoriaarquivo.pdf",
+        "id": "DeAntonio2013",
+        "issued": {
+            "date-parts": [
+                [
+                    "2013"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "author": [
+            {
+                "given": "Daniela Nunes",
+                "family": "Pereira",
+                "suffix": ""
+            }
+        ],
+        "editor": [
+            {
+                "given": "Mauricio Neto",
+                "family": "Olarte",
+                "suffix": ""
+            },
+            {
+                "given": "Sebasti\u00e1n D\u00edaz",
+                "family": "Angel",
+                "suffix": ""
+            }
+        ],
+        "title": "Celebra\u00e7\u00f5es Barrocas na Cartografia de Jos\u00e9 de Sande Vasconcelos",
+        "URL": "https:\/\/www.researchgate.net\/publication\/267512050_Celebracoes_barrocas_na_Cartografia_de_Jose_de_Sande_Vasconcelos",
+        "id": "DNPereira2015",
+        "issued": {
+            "date-parts": [
+                [
+                    "2014"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Jo\u00e3o Paulo",
+                "family": "Esquivel",
+                "suffix": ""
+            }
+        ],
+        "title": "Culto da Mem\u00f3ria: Um Austracista Catal\u00e3o exilado em Portugal relembrado por um seu descendente (1714\/2014)",
+        "URL": "http:\/\/cultodamemoria.blogspot.com\/2015\/04\/um-austracista-catalao-exilado-em.html",
+        "id": "Esquivel2014",
+        "issued": {
+            "date-parts": [
+                [
+                    "2014"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Lisboa",
+        "author": [
+            {
+                "given": "Estacio",
+                "family": "Veiga",
+                "suffix": ""
+            }
+        ],
+        "edition": "1",
+        "title": "Antiguidades Monumentaes do Algarve. Tempos Prehistoricos. Vol. 1",
+        "URL": "https:\/\/archive.org\/details\/paleoethnologi01veig\/",
+        "id": "EVeiga1886",
+        "issued": {
+            "date-parts": [
+                [
+                    "1886"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Carlos",
+                "family": "Fabi\u00e3o",
+                "suffix": ""
+            }
+        ],
+        "title": "Para a hist\u00f3ria da Arqueologia de Loul\u00e9",
+        "URL": "http:\/\/hdl.handle.net\/10451\/32011",
+        "id": "Fabiao2017",
+        "issued": {
+            "date-parts": [
+                [
+                    "2017"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "report",
+        "author": [
+            {
+                "given": "Vanda",
+                "family": "Faria",
+                "suffix": ""
+            },
+            {
+                "given": "Santos",
+                "family": "Lisboa",
+                "suffix": ""
+            }
+        ],
+        "title": "PEGADAS DE DINOSS\u00c1URIOS NA PRAIA DA PAREDE (CASCAIS) RELAT\u00d3RIO PRELIMINAR PARA INFORMAR SOBRE O INTERESSE CIENT\u00cdFICO, PATRIMONIAL, PEDAG\u00d3GICO E CULTURAL DA JAZIDA",
+        "URL": "https:\/\/www.cascais.pt\/sites\/default\/files\/anexos\/gerais\/pegadas_de_dinossaurio_na_praia_da_parede.pdf",
+        "id": "Faria2011",
+        "issued": {
+            "date-parts": [
+                [
+                    "2011"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Tavira",
+        "author": [
+            {
+                "given": "Carla Varela",
+                "family": "Fernandes",
+                "suffix": ""
+            }
+        ],
+        "editor": [
+            {
+                "given": "Museu",
+                "family": "arqueologia",
+                "suffix": ""
+            }
+        ],
+        "title": "(Des)contextos da Arte G\u00f3tica em Tavira.",
+        "URL": "https:\/\/www.academia.edu\/28292029\/_Des_contextos_da_Arte_G\u00f3tica_em_Tavira._In_Tavira_Poder_e_Territ\u00f3rio_Lisboa_Cat\u00e1logo_de_Exposi\u00e7\u00e3o_C\u00e2mara_Municipal_de_Tavira_Museu_Nacional_de_Arqueologia_2003_pp._205-212",
+        "id": "Fernandes2003",
+        "issued": {
+            "date-parts": [
+                [
+                    "2003"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Lisboa",
+        "author": [
+            {
+                "given": "JO\u00c3O PAULO (Instituto Estudos Acad\u00e9micos Seniores)",
+                "family": "FERREIRA DA SILVA",
+                "suffix": ""
+            }
+        ],
+        "edition": "1",
+        "title": "PRIMEIRA INVAS\u00c3O FRANCESA 1807-1808",
+        "URL": "http:\/\/www.acad-ciencias.pt\/document-uploads\/1679225_primeira_invasao_francesa_1807-1808.pdf",
+        "id": "FerreiraDaSilva2012",
+        "issued": {
+            "date-parts": [
+                [
+                    "2012"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "",
+                "family": "Ferreira",
+                "suffix": ""
+            }
+        ],
+        "title": "A alimenta\u00e7\u00e3o portuguesa na idade medieval",
+        "volume": "14",
+        "URL": "http:\/\/www.spcna.pt\/download.php?path=pdfs&filename=SPCNA_20100123134225_RAH_2008_n_3_2.pdf",
+        "id": "FerreiraNPS2008",
+        "issued": {
+            "date-parts": [
+                [
+                    "2008"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "chapter",
+        "author": [
+            {
+                "given": "Fernando Peixoto",
+                "family": "Fonseca",
+                "suffix": ""
+            }
+        ],
+        "title": "Cr\u00f3nica da conquista do Algarve (Parte 2)",
+        "volume": "XXXVIII",
+        "URL": "http:\/\/www.csarmento.uminho.pt\/docs\/amap\/bth\/bth1988_04.pdf",
+        "id": "FonsecaFP1978",
+        "issued": {
+            "date-parts": [
+                [
+                    "1978"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Lu\u00eds Fraga Silva",
+                "family": "Silva",
+                "suffix": ""
+            }
+        ],
+        "title": "Tavira romana",
+        "volume": "2",
+        "URL": "http:\/\/www.geohistorica.net\/arkeotavira.com\/balsa\/tavira\/TavRom.pdf",
+        "id": "FragaSilva2006",
+        "issued": {
+            "date-parts": [
+                [
+                    "2006"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "EstrabaoGeografia3-UnCoimbra2016",
+        "author": [
+            {
+                "given": "Jorge",
+                "family": "Deserto",
+                "suffix": ""
+            },
+            {
+                "given": "Susana Hora",
+                "family": "Marques Pereira",
+                "suffix": ""
+            }
+        ],
+        "title": "Estrab\u00e3o - Geografia (Livro III) - Introdu\u00e7\u00e3o, tradu\u00e7\u00e3o do grego e notas",
+        "doi": "10.14195\/978-989-26-1226-3",
+        "URL": "https:\/\/doi.org\/10.14195\/978-989-26-1226-3",
+        "id": "GeografiaEstrabao-Iberia",
+        "issued": {
+            "date-parts": [
+                [
+                    "2016"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Marta Pereira",
+                "family": "Gon\u00e7alves",
+                "suffix": ""
+            }
+        ],
+        "title": "Ammiragliato - Estudo Sociol\u00f3gico Sobre os Almirantes-mores de Portugal, de D. Dinis a D. Afonso V (1279-1481)",
+        "volume": "23",
+        "URL": "http:\/\/www.uc.pt\/chsc\/recursos\/mhcc\/mhcc_rph43.pdf.",
+        "id": "Goncalves1993",
+        "issued": {
+            "date-parts": [
+                [
+                    "1993"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "report",
+        "author": [
+            {
+                "given": "Herbert",
+                "family": "Gongon",
+                "suffix": ""
+            }
+        ],
+        "title": "GUNPOWDER HISTORY",
+        "URL": "https:\/\/www.scribd.com\/document_downloads\/direct\/126718122?extension=pdf&ft=1539621518&lt=1539625128&show_pdf=true&user_id=20949804&uahk=CFATCBQWi6F_a89q7kowJXnhCdc",
+        "id": "gongon2013",
+        "issued": {
+            "date-parts": [
+                [
+                    "2013"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "",
+                "family": "Grayson",
+                "suffix": ""
+            }
+        ],
+        "title": "The Chronology of the Reign of Ashurbanipal",
+        "doi": "10.1515\/zava.1980.70.2.227",
+        "volume": "70",
+        "URL": "https:\/\/www.degruyter.com\/downloadpdf\/j\/zava.1980.70.issue-2\/zava.1980.70.2.227\/zava.1980.70.2.227.pdf",
+        "id": "Grayson1970",
+        "issued": {
+            "date-parts": [
+                [
+                    "1980"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Castro Marim",
+        "author": [
+            {
+                "given": "Hugo",
+                "family": "Cavaco",
+                "suffix": ""
+            }
+        ],
+        "editor": [
+            {
+                "given": "C\u00e2mara Municipal Castro",
+                "family": "Marim",
+                "suffix": ""
+            }
+        ],
+        "edition": "1",
+        "title": "Castro Marim Quinhentista",
+        "URL": "https:\/\/issuu.com\/municipiocastromarim\/docs\/castro_marim_quinhentista",
+        "id": "HCavaco2008",
+        "issued": {
+            "date-parts": [
+                [
+                    "2008"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Lisboa",
+        "author": [
+            {
+                "given": "Alberto (Biblioteca Ajuda)",
+                "family": "Iria",
+                "suffix": ""
+            }
+        ],
+        "title": "A INVAS\u00c3O DE JUNOT NO ALGARVE",
+        "URL": "https:\/\/en.calameo.com\/books\/000022348eab1ea0ac117",
+        "id": "Iria1941",
+        "issued": {
+            "date-parts": [
+                [
+                    "1941"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Jo\u00e3o Lu\u00eds",
+                "family": "Cardoso",
+                "suffix": ""
+            },
+            {
+                "given": "Alexandra",
+                "family": "Gradim",
+                "suffix": ""
+            }
+        ],
+        "title": "Est\u00e1cio da Veiga e o reconhecimento arqueol\u00f3gico do Algarve: o concelho de Alcoutim",
+        "volume": "IV",
+        "URL": "http:\/\/www.patrimoniocultural.gov.pt\/static\/data\/publicacoes\/o_arqueologo_portugues\/serie_4\/volume_22\/estacio_alcoutim.pdf",
+        "id": "JLCardoso2004",
+        "issued": {
+            "date-parts": [
+                [
+                    "2004"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Jo\u00e3o Pedro",
+                "family": "Bernardes",
+                "suffix": ""
+            },
+            {
+                "given": "",
+                "family": "Gon\u00e7alves",
+                "suffix": ""
+            }
+        ],
+        "title": "Sal e Pesca no Algarve Romano",
+        "volume": "1",
+        "URL": "https:\/\/www.academia.edu\/30450265\/Sal_e_Pesca_no_Algarve_Romano",
+        "id": "JpBernardes2015",
+        "issued": {
+            "date-parts": [
+                [
+                    "2015"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Lu\u00eds Filipe",
+                "family": "Oliveira",
+                "suffix": ""
+            }
+        ],
+        "title": "A Comenda de Cacela e a Visita\u00e7\u00e3o de 1478-1482",
+        "URL": "https:\/\/www.academia.edu\/3616905\/A_Comenda_de_Cacela_e_a_Visita\u00e7\u00e3o_de_1478-1482",
+        "id": "LFOliveira2008",
+        "issued": {
+            "date-parts": [
+                [
+                    "2008"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "M\u00e9rtola",
+        "author": [
+            {
+                "given": "",
+                "family": "Macedo",
+                "suffix": ""
+            },
+            {
+                "given": "",
+                "family": "Garcia",
+                "suffix": ""
+            }
+        ],
+        "editor": [
+            {
+                "given": "Campo Arqueol\u00f3gico",
+                "family": "M\u00e9rtola",
+                "suffix": ""
+            }
+        ],
+        "title": "Os mar\u00edtimos de Monte Gordo eo veraneio na passagem do s\u00e9culo XIX para o s\u00e9culo XX: estrat\u00e9gias de sobreviv\u00eancia",
+        "URL": "http:\/\/hdl.handle.net\/10400.26\/3867",
+        "id": "Macedo2012",
+        "issued": {
+            "date-parts": [
+                [
+                    "2012"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Pedro Urbano Gama",
+                "family": "Machuqueiro",
+                "suffix": ""
+            }
+        ],
+        "title": "A Casa Palmela e o desafio Liberal: Estrat\u00e9gias de afirma\u00e7\u00e3o",
+        "URL": "http:\/\/www.academia.edu\/35640207\/A_Casa_Palmela_e_o_desafio_liberal_estrat\u00e9gias_de_afirma\u00e7\u00e3o_The_dukes_of_Palmela_household_and_the_implantation_of_the_constitutional_monarchy_Affirmation_Strategies",
+        "id": "Machuqueiro2005",
+        "issued": {
+            "date-parts": [
+                [
+                    "2005"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Telmo",
+                "family": "Marono",
+                "suffix": ""
+            }
+        ],
+        "title": "Passado, Presente e Futuro do Bras\u00e3o da C\u00e2mara Municipal de \u00c9vora",
+        "URL": "http:\/\/hdl.handle.net\/10174\/10723",
+        "id": "Marono2013",
+        "issued": {
+            "date-parts": [
+                [
+                    "2013"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Jos\u00e9 Joaquim Dias",
+                "family": "Marques",
+                "suffix": ""
+            }
+        ],
+        "title": "CONTRIBUI\u00c7\u00c3O PARA O ESTUDO DO ROMANCEIRO DO ALGARVE DE EST\u00c1CIO DA VEIGA \u00c0 LUZ DE MANUSCRITOS IN\u00c9DITOS",
+        "URL": "https:\/\/core.ac.uk\/download\/pdf\/61519085.pdf",
+        "id": "Marques1997",
+        "issued": {
+            "date-parts": [
+                [
+                    "1997"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Lillian Ray",
+                "family": "Martin",
+                "suffix": ""
+            }
+        ],
+        "title": "Horse and cargo handling on Medieval Mediterranean ships",
+        "doi": "doi:10.1111\/j.1095-9270.2002.tb01417.x",
+        "volume": "31",
+        "URL": "http:\/\/www.blackwell-synergy.com\/doi\/abs\/10.1111\/j.1095-9270.2002.tb01417.x",
+        "id": "Martin2002a",
+        "issued": {
+            "date-parts": [
+                [
+                    "2002"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Lisboa",
+        "author": [
+            {
+                "given": "Jos\u00e9",
+                "family": "Mattos e Silva",
+                "suffix": ""
+            },
+            {
+                "given": "Ant\u00f3nio",
+                "family": "Mattos e Silva",
+                "suffix": ""
+            }
+        ],
+        "title": "AS VIAGENS PR\u00c9-COLONIANAS DE JO\u00c3O VAZ C\u00d4RTE-REAL, SEGUNDO GASPAR FRUTUOSO, ERNESTO DO CANTO E HENRIQUE BRAZ",
+        "URL": "http:\/\/www.socgeografialisboa.pt\/wp\/wp-content\/uploads\/2010\/01\/PALESTRA-SOBRE-JO\u00c3O-VAZ-CORTE-REAL-NA-SOCIEDADE-DE-GEOGRAFIA-02-04-20141.pdf",
+        "id": "MattosESilva2014",
+        "issued": {
+            "date-parts": [
+                [
+                    "2014"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Ant\u00f3nio",
+                "family": "Monteiro Cardoso",
+                "suffix": ""
+            },
+            {
+                "given": "",
+                "family": "Ant\u00f3nio",
+                "suffix": ""
+            }
+        ],
+        "title": "As guerrilhas miguelistas do Algarve no contexto da guerra civil de 1832-34",
+        "doi": "10.4000\/lerhistoria.2589",
+        "URL": "http:\/\/journals.openedition.org\/lerhistoria\/2589",
+        "id": "MCardoso2006",
+        "issued": {
+            "date-parts": [
+                [
+                    "2006"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Jo\u00e3o (Universidade Lisboa)",
+                "family": "Medina",
+                "suffix": ""
+            }
+        ],
+        "title": "O Z\u00e9 Povinho , totem nacional portugu\u00eas . Estudo de mitog\u00e9nese e simbologia nacional",
+        "doi": "10.1344\/abriu2012.1.105",
+        "volume": "1",
+        "id": "Medina2012",
+        "issued": {
+            "date-parts": [
+                [
+                    "2012"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "author": [
+            {
+                "given": "Wilson Ricardo Miranda",
+                "family": "Gomes",
+                "suffix": ""
+            }
+        ],
+        "publisher": "Universidade do Porto",
+        "title": "O crime em Portugal no s\u00e9culo XV: uma janela para a sociedade medieva? Apresenta\u00e7\u00e3o de um projeto de mestrado",
+        "id": "MirandaGomes2015",
+        "issued": {
+            "date-parts": [
+                [
+                    "2015"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "\u00c9vora",
+        "author": [
+            {
+                "given": "",
+                "family": "Paulo Monteiro",
+                "suffix": ""
+            },
+            {
+                "given": "Lu\u00eds",
+                "family": "Ribeiro",
+                "suffix": ""
+            },
+            {
+                "given": "",
+                "family": "Martins",
+                "suffix": ""
+            },
+            {
+                "given": "",
+                "family": "Martins",
+                "suffix": ""
+            },
+            {
+                "given": "",
+                "family": "Bento",
+                "suffix": ""
+            }
+        ],
+        "title": "Monitoriza\u00e7\u00e3o e Modela\u00e7\u00e3o dos Aqu\u00edferos Costeiros do Algarve",
+        "id": "Monteiro2006",
+        "issued": {
+            "date-parts": [
+                [
+                    "2006"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Tavira",
+        "author": [
+            {
+                "given": "Ant\u00f3nio (Arquivo Hist\u00f3rico Tavira)",
+                "family": "Monteiro",
+                "suffix": ""
+            },
+            {
+                "given": "Marco Sousa (pref\u00e1cio)",
+                "family": "Santos",
+                "suffix": ""
+            }
+        ],
+        "title": "Administra\u00e7\u00e3o do Concelho de Tavira - Contributos para o seu Estudo",
+        "id": "Monteiro2008",
+        "issued": {
+            "date-parts": [
+                [
+                    "2008"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Viseu",
+        "author": [
+            {
+                "given": "Rui",
+                "family": "Moura",
+                "suffix": ""
+            },
+            {
+                "given": "Anselmo",
+                "family": "Dias",
+                "suffix": ""
+            }
+        ],
+        "title": "Cvja Fama Ningvem Vira Que Dome. O 14 de Infantaria",
+        "URL": "https:\/\/comum.rcaap.pt\/handle\/10400.26\/2139",
+        "id": "Moura&Dias2009",
+        "issued": {
+            "date-parts": [
+                [
+                    "2009"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Maria Nunes Gomes (Universidade Nova Lisboa)",
+                "family": "Pereira",
+                "suffix": ""
+            }
+        ],
+        "title": "Comunica\u00e7\u00e3o patrimonial de monumentos megal\u00edticos : estudo de caso do Cromeleque dos Almendres",
+        "URL": "https:\/\/run.unl.pt\/handle\/10362\/18150",
+        "id": "MPereira2016",
+        "issued": {
+            "date-parts": [
+                [
+                    "2016"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Museu",
+                "family": "Tavira",
+                "suffix": ""
+            }
+        ],
+        "title": "Mem\u00f3ria e Futuro: Patrim\u00f3nio, Cole\u00e7\u00f5es e a Constru\u00e7\u00e3o de um Museu para Tavira by Museu Municipal de Tavira - issuu",
+        "URL": "https:\/\/issuu.com\/museum_tavira\/docs\/catalogo_20memoria_20e_20futuro_spr",
+        "id": "MuseudeTavira2017",
+        "issued": {
+            "date-parts": [
+                [
+                    "2017"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Sampaio",
+                "family": "Da",
+                "suffix": ""
+            },
+            {
+                "given": "Ant\u00f3nio",
+                "family": "N\u00f3voa",
+                "suffix": ""
+            }
+        ],
+        "title": "Do Mestre-Escola ao professor do ensino prim\u00e1rio - Subs\u00eddios para a hist\u00f3ria da profiss\u00e3o docente em Portugal (s\u00e9culos XV -XX)",
+        "volume": "3",
+        "URL": "http:\/\/repositorio.ispa.pt\/bitstream\/10400.12\/2200\/1\/1987_3_413.pdf",
+        "id": "Novoa1987",
+        "issued": {
+            "date-parts": [
+                [
+                    "1987"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Coimbra",
+        "author": [
+            {
+                "given": "\u00d2scar",
+                "family": "Ferreira",
+                "suffix": ""
+            },
+            {
+                "given": "Rui",
+                "family": "Tabora",
+                "suffix": ""
+            },
+            {
+                "given": "Teresa",
+                "family": "Drago",
+                "suffix": ""
+            }
+        ],
+        "title": "Shoreface morphodynamics off Tavira (Algarve, Potugal): an integrated approach",
+        "URL": "https:\/\/www.researchgate.net\/publication\/332031492_Shoreface_morphodynamics_off_Tavira_Algarve_Potugal_an_integrated_approach",
+        "id": "OFerreira2018",
+        "issued": {
+            "date-parts": [
+                [
+                    "2018"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Tavira",
+        "author": [
+            {
+                "given": "Ofir Renato",
+                "family": "Chagas",
+                "suffix": ""
+            }
+        ],
+        "edition": "author",
+        "title": "Tavira, Mem\u00f3rias de uma cidade",
+        "id": "OfirChagas2004",
+        "issued": {
+            "date-parts": [
+                [
+                    "2004"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "author": [
+            {
+                "given": "Lu\u00eds Filipe",
+                "family": "Oliveira",
+                "suffix": ""
+            }
+        ],
+        "title": "A ORDEM DE SANTIAGO EM PORTUGAL: A CONQUISTA DAS TERRAS DO SUL (S\u00c9CS. XII-XIII)",
+        "volume": "I",
+        "id": "Oliveira2009",
+        "issued": {
+            "date-parts": [
+                [
+                    "2009"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "report",
+        "publisher-place": "Tavira",
+        "author": null,
+        "title": "Cr\u00f3nica de como D. Paio Correia, mestre de Santiago de Castela tomou este reino do Algarve aos mouros\u201d",
+        "URL": "http:\/\/www.cm-tavira.pt\/site\/sites\/default\/files\/cmt\/CronicaD. Paio-transcricao_0.pdf",
+        "id": "OPinto2013",
+        "issued": {
+            "date-parts": [
+                [
+                    "2013"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "",
+                "family": "Unknown",
+                "suffix": ""
+            }
+        ],
+        "title": "A familia Nobre - artigo de enciclop\u00e9dia",
+        "id": "OsNobreEncyclLB",
+        "issued": {
+            "date-parts": [
+                [
+                    "1989"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Patr\u00edcia Jesus",
+                "family": "Palma",
+                "suffix": ""
+            }
+        ],
+        "title": "Tipografia C\u00e1cima",
+        "doi": "10.4000\/cultura.203",
+        "URL": "http:\/\/journals.openedition.org\/cultura\/203",
+        "id": "Palma2011",
+        "issued": {
+            "date-parts": [
+                [
+                    "2011"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Patr\u00edcia Jesus",
+                "family": "Palma",
+                "suffix": ""
+            }
+        ],
+        "publisher": "Universidade Nova de Lisboa",
+        "title": "Restaura\u00e7\u00e3o e imprensa no Algarve (1808-1811): um impressor, a independ\u00eancia de duas na\u00e7\u00f5es",
+        "volume": "10",
+        "URL": "https:\/\/sapientia.ualg.pt\/bitstream\/10400.1\/7461\/1\/PalmaRestauracao.pdf",
+        "id": "Palma2012",
+        "issued": {
+            "date-parts": [
+                [
+                    "2012"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Patr\u00edcia Jesus",
+                "family": "Palma",
+                "suffix": ""
+            }
+        ],
+        "title": "TIPOGRAFIA BUROCR\u00c1TICA (TAVIRA, 1882-1912). LIGA\u00c7\u00d5ES TRANSLOCAIS DA CULTURA IMPRESSA: GENTES, SABERES E TEXTOS.",
+        "volume": "40",
+        "URL": "https:\/\/www.academia.edu\/37672838\/TIPOGRAFIA_BUROCR\u00c1TICA_TAVIRA_1882-1912_._LIGA\u00c7\u00d5ES_TRANSLOCAIS_DA_CULTURA_IMPRESSA_GENTES_SABERES_E_TEXTOS._Joaquim_Romero_Magalh\u00e3es_dir._-_Anais_do_Munic\u00edpio_de_Faro._40.o_vol._Faro_Munic\\\u1e55i",
+        "id": "Palma2018",
+        "issued": {
+            "date-parts": [
+                [
+                    "2018"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Patr\u00edcia Jesus",
+                "family": "Palma",
+                "suffix": ""
+            }
+        ],
+        "title": "A produ\u00e7\u00e3o liter\u00e1ria Impressa no Algarve durante os s\u00e9culos XIX e XX",
+        "id": "PalmaPJ2008",
+        "issued": {
+            "date-parts": [
+                [
+                    "2008"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Fernando",
+                "family": "Pessanha",
+                "suffix": ""
+            }
+        ],
+        "title": "ATAQUES DA PIRATARIA \u00c0 FOZ DO GUADIANA E A AC\u00c7\u00c3O DE ANT\u00d3NIO LEITE, ALCAIDE-MOR DE ARENILHA",
+        "id": "Pessanha2018",
+        "issued": {
+            "date-parts": [
+                [
+                    "2018"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Fernando",
+                "family": "Pessanha",
+                "suffix": ""
+            }
+        ],
+        "title": "Crist\u00f3v\u00e3o de Mendon\u00e7a, navegador no Oriente e capit\u00e3o de Ormuz-Um desconhecido comendador de Arenilha",
+        "volume": "2",
+        "URL": "https:\/\/www.journal-estrategica.com\/pdf\/numero-2\/cristovao-de-mendonca-navegador-no-oriente-e-capitao-de-ormuz.pdf",
+        "id": "Pessanha2018a",
+        "issued": {
+            "date-parts": [
+                [
+                    "2018"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Lisboa",
+        "author": [
+            {
+                "given": "Ruy",
+                "family": "Pina",
+                "suffix": ""
+            }
+        ],
+        "title": "Chroncia D'el-Rei D. Affonso III",
+        "URL": "https:\/\/ia601403.us.archive.org\/3\/items\/chronicadelreid02pinagoog\/chronicadelreid02pinagoog.pdf",
+        "id": "PinaRuy1907",
+        "issued": {
+            "date-parts": [
+                [
+                    "1907"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "",
+                "family": "Raul",
+                "suffix": ""
+            },
+            {
+                "given": "Sousa",
+                "family": "Cunha",
+                "suffix": ""
+            },
+            {
+                "given": "Arte Portuguesa",
+                "family": "Sob",
+                "suffix": ""
+            },
+            {
+                "given": "Professora",
+                "family": "Doutora",
+                "suffix": ""
+            },
+            {
+                "given": "Maria",
+                "family": "Cardoso",
+                "suffix": ""
+            },
+            {
+                "given": "Rosas",
+                "family": "Faculdade",
+                "suffix": ""
+            }
+        ],
+        "title": "AS IGREJAS DA ORDEM MILITAR DE SANTIAGO. ARQUITECTURA E MATERIAIS.",
+        "volume": "II",
+        "id": "Raul2012",
+        "issued": {
+            "date-parts": [
+                [
+                    "2012"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Maria Jos\u00e9 Fortes",
+                "family": "Rebelo",
+                "suffix": ""
+            }
+        ],
+        "title": "As ind\u00fastrias da pesca e conservas de atum no Algarve do S\u00e9culo XX",
+        "URL": "https:\/\/sapientia.ualg.pt\/bitstream\/10400.1\/679\/2\/C\u00f3pia de Tese.pdf",
+        "id": "Rebelo2010",
+        "issued": {
+            "date-parts": [
+                [
+                    "2010"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Ant\u00f3nio",
+                "family": "Rei",
+                "suffix": ""
+            }
+        ],
+        "title": "Descri\u00e7\u00f5es \u00c1rabes no Espa\u00e7o Algarvio",
+        "URL": "https:\/\/sapientia.ualg.pt\/bitstream\/10400.1\/7492\/1\/20160125130349920.pdf",
+        "id": "Rei2004",
+        "issued": {
+            "date-parts": [
+                [
+                    "2004"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "",
+                "family": "Rold\u00e1n Ca\u00f1as",
+                "suffix": ""
+            },
+            {
+                "given": "",
+                "family": "Moreno P\u00e9rez",
+                "suffix": ""
+            }
+        ],
+        "title": "La ingenier\u00eda y la gesti\u00f3n del agua de riego en Al-Andalus",
+        "doi": "10.4995\/ia.2007.2914",
+        "volume": "14",
+        "URL": "https:\/\/polipapers.upv.es\/index.php\/IA\/article\/view\/2914",
+        "id": "RoldanCanas2007",
+        "issued": {
+            "date-parts": [
+                [
+                    "2007"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Lisboa",
+        "author": [
+            {
+                "given": "Joaquim",
+                "family": "Romero Magalh\u00e3es",
+                "suffix": ""
+            }
+        ],
+        "editor": [
+            {
+                "given": "Editorial",
+                "family": "Estampa",
+                "suffix": ""
+            }
+        ],
+        "edition": "1",
+        "title": "O Algarve Econ\u00f3mico (1600-1773)",
+        "id": "RomeroMagalhaes93",
+        "issued": {
+            "date-parts": [
+                [
+                    "1993"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "",
+                "family": "Roque",
+                "suffix": ""
+            }
+        ],
+        "title": "A AVIA\u00c7\u00c3O MILITAR PORTUGUESA NOS C\u00c9US DA GRANDE GUERRA: REALIDADE E CONSEQU\u00caNCIAS",
+        "URL": "https:\/\/www.ium.pt\/cisdi\/images\/pdf\/CADERNO_20.pdf",
+        "id": "Roque2017",
+        "issued": {
+            "date-parts": [
+                [
+                    "2017"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Ant\u00f3nio Rosa",
+                "family": "Mendes",
+                "suffix": ""
+            }
+        ],
+        "title": "O levantamento popular de Olh\u00e3o contra os franceses",
+        "volume": "6",
+        "URL": "https:\/\/sapientia.ualg.pt\/bitstream\/10400.1\/7364\/1\/PROM06_pp291-294.pdf",
+        "id": "RosaMendes2008",
+        "issued": {
+            "date-parts": [
+                [
+                    "2008"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "author": [
+            {
+                "given": "Vincentii",
+                "family": "Salgado",
+                "suffix": ""
+            }
+        ],
+        "title": "Memorias ecclesiasticas do reino do Algarve: offerecidas ... - Vicente Salgado - Google Livros",
+        "URL": "https:\/\/books.google.pt\/books?id=stEAAAAAcAAJ&lpg=PP5&ots=yo1jVrKWM2&dq=Mem\u00f3rias ecclesiasticas do Reino do Algarve&hl=pt-PT&pg=PP5#v=onepage&q&f=false",
+        "id": "Salgado1786",
+        "issued": {
+            "date-parts": [
+                [
+                    "1786"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Marco Sousa",
+                "family": "Santos",
+                "suffix": ""
+            }
+        ],
+        "title": "O mestre entalhador Manuel Romero. Um artista sevilhano em Tavira no in\u00edcio do s\u00e9culo XIX",
+        "volume": "Ano 7\/8",
+        "URL": "https:\/\/sapientia.ualg.pt\/handle\/10400.1\/7429",
+        "id": "SantosMS2010",
+        "issued": {
+            "date-parts": [
+                [
+                    "2010"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Marco Sousa",
+                "family": "Santos",
+                "suffix": ""
+            }
+        ],
+        "title": "Duas Capelas Laterais medievais do Convento de S. Francisco de Tavira",
+        "doi": "10.4000\/medievalista.207",
+        "URL": "http:\/\/journals.openedition.org\/medievalista\/207",
+        "id": "SantosMS2011",
+        "issued": {
+            "date-parts": [
+                [
+                    "2011"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Marco Sousa",
+                "family": "Santos",
+                "suffix": ""
+            }
+        ],
+        "title": "A igreja de Nossa Senhora da Luz de Tavira",
+        "URL": "https:\/\/sapientia.ualg.pt\/handle\/10400.1\/3270",
+        "id": "SantosMS2011a",
+        "issued": {
+            "date-parts": [
+                [
+                    "2011"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Marco Sousa",
+                "family": "Santos",
+                "suffix": ""
+            }
+        ],
+        "title": "Laboratorio de arte revista del Departamento de Historia del Arte.",
+        "volume": "25",
+        "URL": "https:\/\/idus.us.es\/xmlui\/handle\/11441\/54903",
+        "id": "SantosMS2013",
+        "issued": {
+            "date-parts": [
+                [
+                    "2013"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Isabel Cristina Santos",
+                "family": "Sebasti\u00e3o",
+                "suffix": ""
+            }
+        ],
+        "title": "Retratos de Paio Peres Correia",
+        "URL": "https:\/\/sapientia.ualg.pt\/bitstream\/10400.1\/7191\/1\/S14_SEBASTIAO--Retratos_de_D_Paio_Peres.pdf",
+        "id": "Sebastiao2005",
+        "issued": {
+            "date-parts": [
+                [
+                    "2005"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Maria Jos\u00e9 Godinho Coelho Belo Santos",
+                "family": "Serra",
+                "suffix": ""
+            }
+        ],
+        "title": "\u00c1guas do Quotidiano. Estruturas tradicionais isl\u00e2micas no territ\u00f3rio algarvio.",
+        "URL": "https:\/\/sapientia.ualg.pt\/bitstream\/10400.1\/3696\/1\/tese Aguas do Quotidiano Maria Jose Serra 2013.pdf",
+        "id": "Serra2013",
+        "issued": {
+            "date-parts": [
+                [
+                    "2013"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "report",
+        "publisher-place": "\u00c9vora",
+        "author": [
+            {
+                "given": "Joaquim Bastos",
+                "family": "Serra",
+                "suffix": ""
+            }
+        ],
+        "title": "Notas Biogr\u00e1ficas de Nobres de \u00c9vora (1367-1433) - Anexo II",
+        "URL": "https:\/\/dspace.uevora.pt\/rdpc\/bitstream\/10174\/18151\/10\/10 - An 2 - bios formatadas 28 de setembro 2.pdf",
+        "id": "Serra2018",
+        "issued": {
+            "date-parts": [
+                [
+                    "2018"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Tavira",
+        "author": [
+            {
+                "given": "Nuno Miguel Pascoal Dias Pereira (Regimento Infantaria",
+                "family": "Silva",
+                "suffix": ""
+            }
+        ],
+        "title": "O Algarve e as invas\u00f5es francesas",
+        "URL": "https:\/\/pt.scribd.com\/document\/69949347\/Miolo-o-Algarve-e-as-Invasoes-Francesas",
+        "id": "Silva2010",
+        "issued": {
+            "date-parts": [
+                [
+                    "2010"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "author": [
+            {
+                "given": "Lu\u00eds",
+                "family": "Silva",
+                "suffix": ""
+            }
+        ],
+        "editor": [
+            {
+                "given": "Edi\u00e7\u00f5es",
+                "family": "Colibri",
+                "suffix": ""
+            }
+        ],
+        "title": "OS MOINHOS E OS MOLEIROS DO RIO GUADIANA UMA VIS\u00c3O ANTROPOL\u00d3GICA",
+        "URL": "https:\/\/run.unl.pt\/bitstream\/10362\/46892\/1\/Livro_completo.pdf",
+        "id": "Silva2018",
+        "issued": {
+            "date-parts": [
+                [
+                    "2018"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Lisboa",
+        "author": [
+            {
+                "given": "Jo\u00e3o Baptista Leit\u00e3o",
+                "family": "Silva Lopes",
+                "suffix": ""
+            }
+        ],
+        "editor": [
+            {
+                "given": "Academia Real Sciencias",
+                "family": "Lisboa",
+                "suffix": ""
+            }
+        ],
+        "edition": "1",
+        "title": "Corografia; ou, Memoria economica, estadistica, e topografica do Reino do Algarve : Silva Lopes",
+        "URL": "https:\/\/archive.org\/details\/corografiaoumem00lopegoog\/page\/n9",
+        "id": "silvalopes1841",
+        "issued": {
+            "date-parts": [
+                [
+                    "1841"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Selma Eduarda Moita",
+                "family": "Silva Pereira",
+                "suffix": ""
+            }
+        ],
+        "title": "A Tecelagem Tradicional do Algarve",
+        "URL": "https:\/\/sapientia.ualg.pt\/bitstream\/10400.1\/3133\/1\/Tese Selma Silva Pereira.pdf",
+        "id": "SilvaPereira2012",
+        "issued": {
+            "date-parts": [
+                [
+                    "2012"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Francisco Simas",
+                "family": "Azevedo",
+                "suffix": ""
+            }
+        ],
+        "title": "O Brasao de Armas do Reino do Algarve -",
+        "id": "simas1984",
+        "issued": {
+            "date-parts": [
+                [
+                    "1984"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Jos\u00e9 Sande",
+                "family": "Vasconcelos",
+                "suffix": ""
+            }
+        ],
+        "title": "Mappa das terras d\\textordfeminineAlmargem, [entre 1773 e 1774] - Biblioteca Nacional Digital",
+        "URL": "http:\/\/purl.pt\/23685",
+        "id": "svasconcelos1774",
+        "issued": {
+            "date-parts": [
+                [
+                    "1774"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Tom\u00e9 Mour\u00e3o Horta Machado",
+                "family": "Silva",
+                "suffix": ""
+            }
+        ],
+        "title": "Arqueologia Conventual de Tavira: Contributo para o seu conhecimento Tom\u00e9 Mour\u00e3o Horta Machado e Silva Disserta\u00e7\u00e3o de Mestrado em Arqueologia ( Vers\u00e3o corrigida e melhorada ap\u00f3s a sua defesa p\u00fablica)",
+        "URL": "https:\/\/run.unl.pt\/bitstream\/10362\/18850\/1\/Arqueologia Conventual de Tavira - tese final %28 corrigida%29.pdf",
+        "id": "TomeMouraoHortaMachadoeSilva2015",
+        "issued": {
+            "date-parts": [
+                [
+                    "2015"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Richard",
+                "family": "Unger",
+                "suffix": ""
+            }
+        ],
+        "title": "Warships and Cargo Ships in Medieval Europe",
+        "volume": "22",
+        "URL": "http:\/\/www.jstor.org\/stable\/3104899",
+        "id": "Unger1981",
+        "issued": {
+            "date-parts": [
+                [
+                    "1981"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "FCSH-UNL)",
+                "family": "Vairo  Giulia Rossi (Instituto de Hist\u00f3ria da Arte",
+                "suffix": ""
+            }
+        ],
+        "title": "O genov\u00eas Micer Manuel Pessanha, Almirante d'El-Rei D. Dinis",
+        "volume": "Janeiro",
+        "URL": "http:\/\/www2.fcsh.unl.pt\/iem\/medievalista\/MEDIEVALISTA13\/vairo1306.html",
+        "id": "Vairo2013",
+        "issued": {
+            "date-parts": [
+                [
+                    "2013"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Ana Sofia Rodrigues",
+                "family": "Valente",
+                "suffix": ""
+            }
+        ],
+        "title": "Evolu\u00e7\u00e3o urbana da cidade de Tavira",
+        "URL": "http:\/\/repositorio.ulusiada.pt\/handle\/11067\/3204",
+        "id": "Valente2013",
+        "issued": {
+            "date-parts": [
+                [
+                    "2013"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Ant\u00f3nio (ERA Arqueologia SA)",
+                "family": "Carlos Valera",
+                "suffix": ""
+            }
+        ],
+        "title": "BREVE APONTAMENTO SOBRE A DIMENS\u00c3O COSMOG\u00d3NICA DOS RECINTOS DE FOSSOS DA PR\u00c9-HIST\u00d3RIA RECENTE NO INTERIOR ALENTEJANO",
+        "volume": "1",
+        "URL": "https:\/\/www.researchgate.net\/profile\/Antonio_Valera2\/publication\/267507480_Breve_apontamento_sobre_a_dimensao_cosmogonica_dos_recintos_de_fossos_da_Pre-Historia_Recente_no_Interior_Alentejano\/links\/5450f86d0cf249aa53dc8b90\/Breve-apontamento-sobre-a-dimens",
+        "id": "Valera2013",
+        "issued": {
+            "date-parts": [
+                [
+                    "2013"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "author": [
+            {
+                "given": "Nelson.",
+                "family": "Vaquinhas",
+                "suffix": ""
+            }
+        ],
+        "title": "Da Comunica\u00e7\u00e3o ao Sistema de Informa\u00e7\u00e3o : O Santo Of\u00edcio e o Algarve (1700-1750)",
+        "URL": "https:\/\/books.google.pt\/books?id=anWhDQAAQBAJ&dq=domingos+de+sarre&hl=pt-PT&source=gbs_navlinks_s",
+        "id": "Vaquinhas2016",
+        "issued": {
+            "date-parts": [
+                [
+                    "2016"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Coimbra",
+        "author": [
+            {
+                "given": "Leontina (Universidade Coimbra)",
+                "family": "Ventura",
+                "suffix": ""
+            },
+            {
+                "given": "Ant\u00f3nio Resende (Universidade Coimbra)",
+                "family": "OLIVEIRA",
+                "suffix": ""
+            }
+        ],
+        "editor": [
+            {
+                "given": "Universidade",
+                "family": "Coimbra",
+                "suffix": ""
+            }
+        ],
+        "title": "Chancelaria de D. Afonso III",
+        "URL": "https:\/\/digitalis.uc.pt\/pt-pt\/livro\/chancelaria_de_d_afonso_iii_livros_2_e_3",
+        "id": "Ventura2006",
+        "issued": {
+            "date-parts": [
+                [
+                    "2006"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "thesis",
+        "author": [
+            {
+                "given": "Ana Margarida Filipe",
+                "family": "Vinagre",
+                "suffix": ""
+            }
+        ],
+        "title": "(Re)Descobrir o Museu Archeologico do Algarve de Est\u00e1cio da Veiga",
+        "URL": "http:\/\/repositorio.ul.pt\/bitstream\/10451\/33678\/2\/ULFBA_TES1114_versaofinal_AnaMargaridaFilipe.pdf",
+        "id": "vfilipe2017",
+        "issued": {
+            "date-parts": [
+                [
+                    "2017"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Olh\u00e3o",
+        "author": [
+            {
+                "given": "Carla Costa",
+                "family": "Vieira",
+                "suffix": ""
+            }
+        ],
+        "title": "Olh\u00e3o, Junho de 1808. O levantamento contra as tropas francesas atrav\u00e9s da imprensa e literatura da \u00e9poca",
+        "URL": "https:\/\/www.academia.edu\/3401583\/Olh\u00e3o_Junho_de_1808._O_levantamento_contra_as_tropas_francesas_atrav\u00e9s_da_imprensa_e_literatura_da_\u00e9poca",
+        "id": "Vieira2009",
+        "issued": {
+            "date-parts": [
+                [
+                    "2009"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Alberto",
+                "family": "Vieira",
+                "suffix": ""
+            }
+        ],
+        "title": "LOS PORTUGUESES Y LAS ISLAS CANARIAS MADEIRA, LAS AZORES Y LA ISLA DE LANZAROTE",
+        "volume": "165",
+        "URL": "http:\/\/www.madeira-edu.pt\/ceha\/",
+        "id": "Vieira2oo2",
+        "issued": {
+            "date-parts": [
+                [
+                    "2002"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "book",
+        "publisher-place": "Loul\u00e9",
+        "author": [
+            {
+                "given": "Jos\u00e9 Carlos",
+                "family": "Vilhena Mesquita",
+                "suffix": ""
+            }
+        ],
+        "title": "Loul\u00e9 no contexto pol\u00edtico e socioecon\u00f3mico das Lutas Liberais",
+        "URL": "https:\/\/www.researchgate.net\/publication\/331500748_Loule_no_contexto_politico_e_socioeconomico_das_Lutas_Liberais?isFromSharing=1",
+        "id": "VilhenaMesquita2018",
+        "issued": {
+            "date-parts": [
+                [
+                    "2018"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Jos\u00e9 Carlos",
+                "family": "Vilhena Mesquita",
+                "suffix": ""
+            }
+        ],
+        "title": "Faro e o Movimento do Orfeu",
+        "volume": "1",
+        "URL": "https:\/\/sapientia.ualg.pt\/handle\/10400.1\/5125",
+        "id": "vmesquita1984",
+        "issued": {
+            "date-parts": [
+                [
+                    "1984"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Jos\u00e9 Carlos",
+                "family": "Vilhena Mesquita",
+                "suffix": ""
+            }
+        ],
+        "title": "Breves achegas para a hist\u00f3ria das pescas em Tavira no s\u00e9culo XIX",
+        "id": "vmesquita1988",
+        "issued": {
+            "date-parts": [
+                [
+                    "1988"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Jos\u00e9 Carlos",
+                "family": "Vilhena Mesquita",
+                "suffix": ""
+            }
+        ],
+        "title": "A instaura\u00e7\u00e3o do liberalismo em Portugal numa vis\u00e3o global socioecon\u00f3mica : a participa\u00e7\u00e3o do Algarve",
+        "volume": "I",
+        "id": "vmesquita2004",
+        "issued": {
+            "date-parts": [
+                [
+                    "2004"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Jos\u00e9 Carlos",
+                "family": "Vilhena Mesquita",
+                "suffix": ""
+            }
+        ],
+        "title": "O Remexido e a resist\u00eancia miguelista no Algarve O Remexido e a resist\u00eancia miguelista no Algarve",
+        "volume": "13",
+        "URL": "https:\/\/www.researchgate.net\/publication\/268803267_O_Remexido_e_a_resistencia_miguelista_no_Algarve",
+        "id": "vmesquita2009",
+        "issued": {
+            "date-parts": [
+                [
+                    "2009"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "article",
+        "author": [
+            {
+                "given": "Jos\u00e9 Carlos",
+                "family": "Vilhena Mesquita",
+                "suffix": ""
+            }
+        ],
+        "title": "Para a Hist\u00f3ria da Sa\u00fade no Algarve. As epidemias de c\u00f3lera-m\u00f3rbus no s\u00e9culo XIX",
+        "doi": "10.1038\/ncomms8487",
+        "URL": "https:\/\/sapientia.ualg.pt\/bitstream\/10400.1\/10865\/1\/Para a Hist\u00f3ria da Sa\u00fade no Algarve. As epidemias de c\u00f3lera m\u00f3rbus no s\u00e9culo XIX.pdf",
+        "id": "vmesquita2015",
+        "issued": {
+            "date-parts": [
+                [
+                    "2015"
+                ]
+            ]
+        }
+    }
+]

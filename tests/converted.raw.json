@@ -1,0 +1,127 @@
+[
+    {
+        "bibtex": "@book{aalves2013\n , author = {Alves, Adalberto}\n , edition = {1}\n , editor = {Imprensa Nacional Casa da Moeda}\n , isbn = {9789722721790}\n , keywords = {arabico,arabismo,dicion\u00e1rio,reference}\n , mendeley-tags = {arabico,arabismo,dicion\u00e1rio,reference}\n , publisher = {Imprensa Nacional Casa da Moeda}\n , title = {Dicion\u00e1rio de Arabismos da L\u00edngua Portuguesa - Adalberto Alves - Google Livros}\n , url = {https:\/\/books.google.pt\/books?id=LzveAgAAQBAJ&printsec=frontcover&hl=pt-PT&source=gbs_vpt_buy#v=onepage&q&f=false}\n , year = {2013}\n}",
+        "year": "2013",
+        "url": "https:\/\/books.google.pt\/books?id=LzveAgAAQBAJ&printsec=frontcover&hl=pt-PT&source=gbs_vpt_buy#v=onepage&q&f=false",
+        "title": "Dicion\u00e1rio de Arabismos da L\u00edngua Portuguesa - Adalberto Alves - Google Livros",
+        "publisher": "Imprensa Nacional Casa da Moeda",
+        "mendeley-tags": "arabico,arabismo,dicion\u00e1rio,reference",
+        "keywords": "arabico,arabismo,dicion\u00e1rio,reference",
+        "isbn": "9789722721790",
+        "editor": {
+            "creators": [
+                {
+                    "surname": "Moeda",
+                    "firstname": "Imprensa Nacional Casa",
+                    "initials": "",
+                    "prefix": "da"
+                }
+            ]
+        },
+        "edition": "1",
+        "author": {
+            "creators": [
+                {
+                    "surname": "Alves",
+                    "firstname": "Adalberto",
+                    "initials": "",
+                    "prefix": ""
+                }
+            ]
+        },
+        "cite": "aalves2013",
+        "entrytype": "book"
+    },
+    {
+        "bibtex": "@book{AderitoVaz1986\n , address = {Olh\u00e3o}\n , author = {Vaz, Ad\u00e9rito}\n , edition = {1}\n , keywords = {S\u00e9culo XIX,bom sucesso,invas\u00f5es francesas,napole\u00e3o,olh\u00e3o,sebastiao martins mestre,tavira}\n , mendeley-tags = {S\u00e9culo XIX,bom sucesso,invas\u00f5es francesas,napole\u00e3o,olh\u00e3o,sebastiao martins mestre,tavira}\n , pages = {6}\n , publisher = {A Voz de Olh\u00e3o}\n , title = {Quem foi Sebasti\u00e3o Martins Mestre na hist\u00f3ria do sotavento algarvio}\n , year = {1986}\n}",
+        "year": "1986",
+        "title": "Quem foi Sebasti\u00e3o Martins Mestre na hist\u00f3ria do sotavento algarvio",
+        "publisher": "A Voz de Olh\u00e3o",
+        "pages": "6",
+        "mendeley-tags": "S\u00e9culo XIX,bom sucesso,invas\u00f5es francesas,napole\u00e3o,olh\u00e3o,sebastiao martins mestre,tavira",
+        "keywords": "S\u00e9culo XIX,bom sucesso,invas\u00f5es francesas,napole\u00e3o,olh\u00e3o,sebastiao martins mestre,tavira",
+        "edition": "1",
+        "author": {
+            "creators": [
+                {
+                    "surname": "Vaz",
+                    "firstname": "Ad\u00e9rito",
+                    "initials": "",
+                    "prefix": ""
+                }
+            ]
+        },
+        "address": "Olh\u00e3o",
+        "cite": "AderitoVaz1986",
+        "entrytype": "book"
+    },
+    {
+        "bibtex": "@book{Agius2008a\n , address = {Leiden}\n , author = {Agius, Dionisius A.}\n , booktitle = {Middle East - From Mesopotamia to the Indian Ocean}\n , file = {:home\/sam\/.local\/share\/data\/Mendeley Ltd.\/Mendeley Desktop\/Downloaded\/Agius, Agius - 2008 - Classic Ships of Islam.pdf:pdf}\n , isbn = {9789004158634}\n , pages = {529}\n , publisher = {Brill}\n , title = {Classic Ships of Islam}\n , year = {2008}\n}",
+        "year": "2008",
+        "title": "Classic Ships of Islam",
+        "publisher": "Brill",
+        "pages": "529",
+        "isbn": "9789004158634",
+        "file": ":home\/sam\/.local\/share\/data\/Mendeley Ltd.\/Mendeley Desktop\/Downloaded\/Agius, Agius - 2008 - Classic Ships of Islam.pdf:pdf",
+        "booktitle": "Middle East - From Mesopotamia to the Indian Ocean",
+        "author": {
+            "creators": [
+                {
+                    "surname": "Agius",
+                    "firstname": "Dionisius",
+                    "initials": "A",
+                    "prefix": ""
+                }
+            ]
+        },
+        "address": "Leiden",
+        "cite": "Agius2008a",
+        "entrytype": "book"
+    },
+    {
+        "bibtex": "@phdthesis{AISantos2015\n , author = {Santos, Ana Isabel Nascimento}\n , file = {:home\/sam\/.local\/share\/data\/Mendeley Ltd.\/Mendeley Desktop\/Downloaded\/Santos - 2015 - Tavira, Patrim\u00f3nios do Mar - da Ribeira \u00e0 Casa Nobre de Quinhentos - o caso dos Telhados de Tesouro.pdf:pdf}\n , keywords = {Casa Nobre,Noble House,Ribeira,Riverside,Tavira,Telhados de Tesouro,Telhados de tesouro,telhados de Tesouro}\n , mendeley-tags = {Casa Nobre,Noble House,Ribeira,Riverside,Tavira,Telhados de Tesouro,telhados de Tesouro}\n , school = {Universidade de \u00c9vora}\n , title = {Tavira, Patrim\u00f3nios do Mar - da Ribeira \u00e0 Casa Nobre de Quinhentos - o caso dos Telhados de Tesouro}\n , url = {https:\/\/dspace.uevora.pt\/rdpc\/handle\/10174\/18155}\n , year = {2015}\n}",
+        "year": "2015",
+        "url": "https:\/\/dspace.uevora.pt\/rdpc\/handle\/10174\/18155",
+        "title": "Tavira, Patrim\u00f3nios do Mar - da Ribeira \u00e0 Casa Nobre de Quinhentos - o caso dos Telhados de Tesouro",
+        "school": "Universidade de \u00c9vora",
+        "mendeley-tags": "Casa Nobre,Noble House,Ribeira,Riverside,Tavira,Telhados de Tesouro,telhados de Tesouro",
+        "keywords": "Casa Nobre,Noble House,Ribeira,Riverside,Tavira,Telhados de Tesouro,Telhados de tesouro,telhados de Tesouro",
+        "file": ":home\/sam\/.local\/share\/data\/Mendeley Ltd.\/Mendeley Desktop\/Downloaded\/Santos - 2015 - Tavira, Patrim\u00f3nios do Mar - da Ribeira \u00e0 Casa Nobre de Quinhentos - o caso dos Telhados de Tesouro.pdf:pdf",
+        "author": {
+            "creators": [
+                {
+                    "surname": "Santos",
+                    "firstname": "Ana Isabel Nascimento",
+                    "initials": "",
+                    "prefix": ""
+                }
+            ]
+        },
+        "cite": "AISantos2015",
+        "entrytype": "phdthesis"
+    },
+    {
+        "bibtex": "@book{Alarcao2018\n , address = {Coimbra}\n , author = {Alarc\u00e3o, Jorge de (Universidade Coimbra)}\n , doi = {https:\/\/doi.org\/10.14195\/978-989-26-1479-3}\n , keywords = {era cl\u00e1ssica,espanha,gal\u00e9cia,imp\u00e9rio romano,lusit\u00e2nia,portugal,roma}\n , mendeley-tags = {era cl\u00e1ssica,espanha,gal\u00e9cia,imp\u00e9rio romano,lusit\u00e2nia,portugal,roma}\n , pages = {405}\n , publisher = {Imprensa da Universidade de Coimbra}\n , title = {A Lusit\u00e2nia e a Gal\u00e9cia: do s\u00e9c.II a.C. ao s\u00e9c.VI d.C.}\n , url = {http:\/\/hdl.handle.net\/10316.2\/44227}\n , year = {2017}\n}",
+        "year": "2017",
+        "url": "http:\/\/hdl.handle.net\/10316.2\/44227",
+        "title": "A Lusit\u00e2nia e a Gal\u00e9cia: do s\u00e9c.II a.C. ao s\u00e9c.VI d.C.",
+        "publisher": "Imprensa da Universidade de Coimbra",
+        "pages": "405",
+        "mendeley-tags": "era cl\u00e1ssica,espanha,gal\u00e9cia,imp\u00e9rio romano,lusit\u00e2nia,portugal,roma",
+        "keywords": "era cl\u00e1ssica,espanha,gal\u00e9cia,imp\u00e9rio romano,lusit\u00e2nia,portugal,roma",
+        "doi": "https:\/\/doi.org\/10.14195\/978-989-26-1479-3",
+        "author": {
+            "creators": [
+                {
+                    "surname": "Alarc\u00e3o",
+                    "firstname": "Jorge (Universidade Coimbra)",
+                    "initials": "",
+                    "prefix": "de"
+                }
+            ]
+        },
+        "address": "Coimbra",
+        "cite": "Alarcao2018",
+        "entrytype": "book"
+    }
+]
