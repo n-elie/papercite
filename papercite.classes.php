@@ -533,7 +533,9 @@ class Papercite {
 
 		// Includes once the bibtex parser
 		require_once( dirname( __FILE__ ) . "/lib/BibTex_" . $this->options["bibtex_parser"] . ".php" );
-		
+
+		// Includes once the converter
+		require_once( "bib2tpl/tpl_converter.php" );
 
 		// Get the command
 		$command = $matches[1];
