@@ -148,6 +148,9 @@ will result in a footnote being generated after the post text. The numbering of 
 * CSL Support
 * Improved plugin settings page
 
+### 0.5.22
+ * Fixed problem with uploading .bib files to the media library was being denied for security reasons (issue #144)
+
 ### 0.5.20
 
  * Support for textual footnotes
