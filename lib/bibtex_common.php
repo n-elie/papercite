@@ -93,11 +93,7 @@ class PaperciteBibtexPages {
 
 
 
-	public function __toString() {
-		// TODO: Implement __toString() method.
-		//return "pages {$this->start} : {$this->end}";
-		return $this->toCSL();
-	}
+
 }
 
 ?>
