@@ -1,5 +1,13 @@
 (function ($) {
 
+    //console.log('papercite_options.js executed!');
+
+    // ensure function is not executed outside of the papercite options view
+    if (location.href.indexOf('papercite') == -1) {
+        //console.log("Exiting ...!");
+        return false;
+    }
+
     $('form h2').eq(1).hide().nextUntil('h2,input').hide();
     $('form h2').eq(2).hide().nextUntil('h2,input').hide();
     //$('form h2').nextUntil('h2,input').not('.nav-tab-active')

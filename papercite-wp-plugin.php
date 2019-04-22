@@ -50,8 +50,8 @@ function papercite_init() {
 
 		// register de scripts for the post editor
 		if ( is_admin() ) {
-			wp_register_script( 'papercite-post-editor', plugins_url( 'papercite/js/ppc_post_editor.js' ), array( 'wp-blocks' ) );
-			wp_enqueue_script( 'papercite-post-editor' );
+			//	wp_register_script( 'papercite-post-editor', plugins_url( 'papercite/js/ppc_post_editor.js' ), array( 'wp-blocks' ) );
+			//	wp_enqueue_script( 'papercite-post-editor' );
 		}
 	}
 
@@ -59,7 +59,7 @@ function papercite_init() {
 	wp_register_style( 'papercite_css', plugins_url( 'papercite/papercite.css' ) );
 	wp_enqueue_style( 'papercite_css' );
 
-	wp_register_style( 'ppc-post-editor-css', plugins_url( 'papercite/ppc_post_editor.css' ) );
+//	wp_register_style( 'ppc-post-editor-css', plugins_url( 'papercite/ppc_post_editor.css' ) );
 	wp_enqueue_style( 'ppc-post-editor-css' );
 
 	// Initialise the singleton
