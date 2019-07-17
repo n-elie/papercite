@@ -11,3 +11,4 @@ vendor
 ppc_*
 *.bib
 *.sublime-workspace
+*.bak
