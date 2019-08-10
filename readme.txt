@@ -5,8 +5,8 @@ PAPERCITE
 CONTRIBUTORS: bpiwowar, digitalfisherman
 TAGS: formatting, bibtex, bibliography, footnotes
 REQUIRES AT LEAST: 3.8
-TESTED UP TO: 5.0.3
-STABLE TAG: 0.5.18
+TESTED UP TO: 5.2.2
+STABLE TAG: 0.6.0
 LICENSE: GPLv2 or later
 LICENSE URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -167,6 +167,10 @@ will result in a footnote being generated after the post text. The numbering of 
 *   Hability to Upload new CSL files directly to  the directory `papercite-data`
 
 == Changelog ==
+
+= 0.6.1 =
+
+* CSL styles are shown on the preview in papercite options
 
 = 0.6.0 =
 
@@ -503,6 +507,9 @@ will result in a footnote being generated after the post text. The numbering of 
 
 
 == Upgrade Notice ==
+
+= 0.6.0 =
+Download the CSL styles definition manually using composer (see note above)
 
 = 0.5.9 =
 
