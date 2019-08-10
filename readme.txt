@@ -29,6 +29,8 @@ or remote) and entries can be formatted by default using various
 predefined styles. Bibtex source file and a link to the publication are
 also available from the HTML.
 
+
+
 _Input_:
 
 Sources files are BibTex files that can be:
@@ -98,6 +100,12 @@ Then, you should activate papercite, and follow the instructions given
 in the _documentation_ that you can access through the plugin list
 (click on the documentation link).
 
+= Installing CSL styles =
+The CSL styles don't come by default in this package, since the complete list
+is huge (more than 9000 entries). You'll have to use [composer](https://getcomposer.org/) to download them.
+Inside the package main directory issue the following command:
+`composer update` 
+and composer will take care of the rest, downloading the CSL xml files into `vendor/citation-style-language/styles-distribution` .
 
 == Frequently Asked Questions ==
 

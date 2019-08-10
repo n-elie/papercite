@@ -11,7 +11,7 @@ PAPERCITE
 Papercite helps to format bibtex entries to display a bibliography or
 cite papers.
 
-***This fork adds support for CSL, textual footnotes, besides references from bibliograhic databases.***
+***This fork adds support for textual footnotes, besides references from bibliograhic databases.***
 
 
 
@@ -27,6 +27,8 @@ WordPress pages and posts. The input data is a bibtex file (either local
 or remote) and entries can be formatted by default using various
 predefined styles. Bibtex source file and a link to the publication are
 also available from the HTML.
+
+
 
 _Input_:
 
@@ -98,6 +100,13 @@ Then, you should activate papercite, and follow the instructions given
 in the _documentation_ that you can access through the plugin list
 (click on the documentation link).
 
+
+### Installing CSL styles 
+The CSL styles don't come by default in this package, since the complete list
+is huge (more than 9000 entries). You'll have to use [composer](https://getcomposer.org/) to download them.
+Inside the package main directory issue the following command:
+`composer update` 
+and composer will take care of the rest, downloading the CSL xml files into `vendor/citation-style-language/styles-distribution` .
 
 
 ## Frequently Asked Questions 
