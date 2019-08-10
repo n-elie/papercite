@@ -27,7 +27,7 @@ global $wpdb;
 global $papercite_db_version;
 global $papercite_table_name;
 global $papercite_table_name_url;
-$papercite_table_name = $GLOBALS["wpdb"]->prefix . "plugin_papercite";
+$papercite_table_name = $wpdb->prefix . "plugin_papercite";
 $papercite_table_name_url = $papercite_table_name . "_url";
 $papercite_db_version = "1.9";
 

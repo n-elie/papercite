@@ -12,11 +12,16 @@ class WpPapercite extends Papercite {
 	var $textual_footnotes = array();
 	var $textual_footnotes_counter = 0;
 	var $cssStyles;
+	var $papercite_table_name;
+	var $papercite_table_name_url;
+
 
 	/**
 	 * Init is called before the first callback
 	 */
 	function init() {
+
+	    global $wpdb;
 
 		parent::init();
 
@@ -56,6 +61,10 @@ class WpPapercite extends Papercite {
 				$this->options["bibtex_parser"] = "osbib";
 			}
 		}
+
+		$this->papercite_table_name = $wpdb->prefix . "plugin_papercite";
+		$this->papercite_table_name_url = $this->papercite_table_name . "_url";
+
 	}
 
 	/** Returns filename of cached version of given url
@@ -251,7 +260,7 @@ class WpPapercite extends Papercite {
 	 * Get the bibtex data from an URI
 	 */
 	function getData( $biburis, $options ) {
-		global $wpdb, $papercite_table_name, $papercite_table_name_url;
+    global $wpdb;
 
 		$timeout       = isset( $options["timeout"] ) ? $options['timeout'] : $this->options['timeout'];
 		$processtitles = isset( $options["process_titles"] ) ? $options["process_titles"] : $this->options['process_titles'];
@@ -304,9 +313,10 @@ class WpPapercite extends Papercite {
 
 						// Check if we don't have the data in cache
 						if ( $this->useDb() ) {
+
 							$oldurlid = - 1;
 							// We use entrytype as a timestamp
-							$row = $wpdb->get_row( $wpdb->prepare( "SELECT urlid, ts FROM $papercite_table_name_url WHERE url=%s", $biburi ) );
+							$row = $wpdb->get_row( $wpdb->prepare( "SELECT urlid, ts FROM {$this->papercite_table_name_url} WHERE url=%s", $biburi ) );
 							if ( $row ) {
 								$oldurlid = $row->urlid;
 								if ( $row->ts >= $fileTS ) {
@@ -353,12 +363,12 @@ class WpPapercite extends Papercite {
 						if ( ! $stringedFile && $this->useDb() ) {
 							// First delete everything
 							if ( $oldurlid >= 0 ) {
-								$code = $wpdb->query( $wpdb->prepare( "DELETE FROM $papercite_table_name WHERE urlid=%d", $oldurlid ) );
+								$code = $wpdb->query( $wpdb->prepare( "DELETE FROM {$this->papercite_table_name} WHERE urlid=%d", $oldurlid ) );
 								if ( $code === false ) {
 									break;
 								}
 							} else {
-								$code = $wpdb->query( $wpdb->prepare( "INSERT INTO $papercite_table_name_url(url, ts) VALUES (%s, 0)", $biburi ) );
+								$code = $wpdb->query( $wpdb->prepare( "INSERT INTO {$this->papercite_table_name_url}(url, ts) VALUES (%s, 0)", $biburi ) );
 								if ( $code === false ) {
 									break;
 								}
@@ -373,7 +383,7 @@ class WpPapercite extends Papercite {
 									$year = - 1;
 								}
 								$statement = $wpdb->prepare(
-									"REPLACE $papercite_table_name(urlid, bibtexid, entrytype, year, data) VALUES (%s,%s,%s,%s,%s)",
+									"REPLACE {$this->papercite_table_name}(urlid, bibtexid, entrytype, year, data) VALUES (%s,%s,%s,%s,%s)",
 									$oldurlid,
 									isset( $value['cite'] ) ? $value["cite"] : '',
 									isset( $value["entrytype"] ) ? $value["entrytype"] : '',
@@ -386,7 +396,7 @@ class WpPapercite extends Papercite {
 								}
 							}
 							if ( $code !== false ) {
-								$statement = $wpdb->prepare( "REPLACE INTO $papercite_table_name_url(url, urlid, ts) VALUES(%s,%s,%s)", $biburi, $oldurlid, $fileTS );
+								$statement = $wpdb->prepare( "REPLACE INTO {$this->papercite_table_name_url}(url, urlid, ts) VALUES(%s,%s,%s)", $biburi, $oldurlid, $fileTS );
 								$code      = $wpdb->query( $statement );
 							}
 						}
@@ -405,7 +415,7 @@ class WpPapercite extends Papercite {
 
 	// Get the subset of keys present in the entries
 	static function getEntriesByKey( &$entries, &$keys ) {
-		global $wpdb, $papercite_table_name;
+
 		$n     = 0;
 		$a     = array();
 		$dbs   = array();
@@ -439,7 +449,7 @@ class WpPapercite extends Papercite {
 				$v = '"' . $wpdb->escape( $v ) . '"';
 			}
 			$keylist = implode( ",", $unfound );
-			$st      = "SELECT data FROM $papercite_table_name WHERE $dbs and bibtexid in ($keylist)";
+			$st      = "SELECT data FROM {$this->papercite_table_name} WHERE $dbs and bibtexid in ($keylist)";
 			$val     = $wpdb->get_col( $st );
 			if ( $val !== false ) {
 				foreach ( $val as &$data ) {
@@ -475,7 +485,7 @@ class WpPapercite extends Papercite {
 	 *
 	 */
 	function getEntries( $options = array() ) {
-		global $wpdb, $papercite_table_name;
+
 
 		if ( func_num_args() < 1 ) {
 			$options = $this->options;
@@ -531,7 +541,7 @@ class WpPapercite extends Papercite {
 				}
 				$denyCond = $deny ? "and entrytype not in (" . implode( ",", $deny ) . ")" : "";
 				// Retrieve and filter further
-				$st   = "SELECT data FROM $papercite_table_name WHERE $dbCond $denyCond $allowCond";
+				$st   = "SELECT data FROM {$this->papercite_table_name} WHERE $dbCond $denyCond $allowCond";
 				$rows = $wpdb->get_col( $st );
 				if ( $rows ) {
 					foreach ( $rows as $data ) {
@@ -564,7 +574,7 @@ class WpPapercite extends Papercite {
 	}
 
 	function end_bibshow() {
-		global $wpdb, $papercite_table_name;
+
 
 		// select from cites
 		if ( sizeof( $this->bibshows ) == 0 ) {
@@ -586,7 +596,7 @@ class WpPapercite extends Papercite {
 		foreach ( $cites as $key => &$cite ) {
 			// Search
 			if ( ( ! isset( $data[ $key ] ) || ! $data[ $key ] ) && $dbs ) {
-				$val = $wpdb->get_var( $wpdb->prepare( "SELECT data FROM $papercite_table_name WHERE $dbs and bibtexid=%s", $key ) );
+				$val = $wpdb->get_var( $wpdb->prepare( "SELECT data FROM {$this->papercite_table_name} WHERE $dbs and bibtexid=%s", $key ) );
 				if ( $val !== false ) {
 					$refs[ $cite[0] ] = maybe_unserialize( $val );
 				}

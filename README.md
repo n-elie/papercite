@@ -11,7 +11,7 @@ PAPERCITE
 Papercite helps to format bibtex entries to display a bibliography or
 cite papers.
 
-***This fork adds support for textual footnotes, besides references from bibliograhic databases.***
+***This fork adds support for CSL, textual footnotes, besides references from bibliograhic databases.***
 
 
 

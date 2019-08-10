@@ -161,6 +161,22 @@ function papercite_options_page() {
 
         }
 
+        jQuery('.papercite_options_format_type_radio').change(function(evt) {
+            console.log(this,evt);
+            var format_type_slctd = jQuery(this).val();
+            jQuery.get(ajaxurl,
+                {'action': 'list_styles', 'type' : format_type_slctd })
+                .success(function (response) {
+                console.log(response);
+                jQuery('#papercite_format').html('');
+                response.forEach(function(item){
+                    jQuery('#papercite_format').append("<option>"+item +"</option>");
+                });
+            }).error(function(errorMsg) {
+                console.error(errorMsg);
+            })
+        });
+
     </script>
 
 
@@ -327,7 +343,7 @@ add_action('wp_ajax_papercite_create_db', 'papercite_ajax_create_db');
 add_action('wp_ajax_papercite_clear_db', 'papercite_ajax_clear_db');
 
 function papercite_ajax_clear_db() {
-    global $wpdb;
+    global $wpdb,$papercite_table_name_url,$papercite_table_name;
     require_once(dirname(__FILE__) . "/papercite_db.php");
     // $wpdb->show_errors(true);
 
@@ -355,6 +371,7 @@ function papercite_ajax_create_db() {
 }
 
 function papercite_use_db() {
+    global $papercite_table_name, $papercite_table_name_url;
 	$option = $GLOBALS["papercite"]->options["use_db"];
 
 

@@ -48,10 +48,11 @@ function papercite_init() {
 		wp_register_script( 'papercite', plugins_url( 'papercite/js/papercite.js' ), array( 'jquery' ) );
 		wp_enqueue_script( 'papercite' );
 
-		// register de scripts for the post editor
+		// register the scripts for the post editor
 		if ( is_admin() ) {
 			//	wp_register_script( 'papercite-post-editor', plugins_url( 'papercite/js/ppc_post_editor.js' ), array( 'wp-blocks' ) );
 			//	wp_enqueue_script( 'papercite-post-editor' );
+			wp_enqueue_editor();
 		}
 	}
 
@@ -174,10 +175,11 @@ add_filter( 'plugin_row_meta', 'papercite_row_cb', 1, 2 );
 
 
 // --- Register the MIME type for Bibtex files
-function papercite_mime_types($mime_types) {
-  // Adjust the $mime_types, which is an associative array where the key is extension and value is mime type.
-    $mime_types['bib'] = 'application/x-bibtex'; // Adding bibtex
-    return $mime_types;
+function papercite_mime_types( $mime_types ) {
+	// Adjust the $mime_types, which is an associative array where the key is extension and value is mime type.
+	$mime_types['bib'] = 'application/x-bibtex'; // Adding bibtex
+
+	return $mime_types;
 
 }
 
@@ -188,27 +190,27 @@ add_filter( 'upload_mimes', 'papercite_mime_types', 1, 1 );
  * Restore .bib upload functionality in Media Library for WordPress 4.9.9 and up
  * adapted from https://gist.github.com/rmpel/e1e2452ca06ab621fe061e0fde7ae150
  */
-add_filter('wp_check_filetype_and_ext', function($values, $file, $filename, $mimes) {
-    if ( extension_loaded( 'fileinfo' ) ) {
-        // with the php-extension, a bib file is issues type text/plain so we fix that back to
-        // application/x-bibtex by trusting the file extension.
-        $finfo     = finfo_open( FILEINFO_MIME_TYPE );
-        $real_mime = finfo_file( $finfo, $file );
-        finfo_close( $finfo );
-        if ( $real_mime === 'text/plain' && preg_match( '/\.(bib)$/i', $filename ) ) {
-            $values['ext']  = 'bib';
-            $values['type'] = 'application/x-bibtex';
-        }
-    } else {
-        // without the php- extension, we probably don't have the issue at all, but just to be sure...
-        if ( preg_match( '/\.(bib)$/i', $filename ) ) {
-            $values['ext']  = 'bib';
-            $values['type'] = 'application/x-bibtex';
-        }
-    }
-    return $values;
-}, PHP_INT_MAX, 4);
+add_filter( 'wp_check_filetype_and_ext', function ( $values, $file, $filename, $mimes ) {
+	if ( extension_loaded( 'fileinfo' ) ) {
+		// with the php-extension, a bib file is issues type text/plain so we fix that back to
+		// application/x-bibtex by trusting the file extension.
+		$finfo     = finfo_open( FILEINFO_MIME_TYPE );
+		$real_mime = finfo_file( $finfo, $file );
+		finfo_close( $finfo );
+		if ( $real_mime === 'text/plain' && preg_match( '/\.(bib)$/i', $filename ) ) {
+			$values['ext']  = 'bib';
+			$values['type'] = 'application/x-bibtex';
+		}
+	} else {
+		// without the php- extension, we probably don't have the issue at all, but just to be sure...
+		if ( preg_match( '/\.(bib)$/i', $filename ) ) {
+			$values['ext']  = 'bib';
+			$values['type'] = 'application/x-bibtex';
+		}
+	}
 
+	return $values;
+}, PHP_INT_MAX, 4 );
 
 
 // digfish --- add the sidebard (metabox) to the post edit with the bibliography items
@@ -223,8 +225,9 @@ function papercite_render_metabox() {
 	$entries = $papercite->getEntries( $papercite->options );
 
 	array_shift( $entries );
-	$entries = array_slice( $entries, 0, 10 );
+	$entries = array_slice( $entries, 0, 100 );
 	//d($entries[0]);
+	echo "<p><INPUT type='text' id='papercite-entries-search' name='papercite-entries-search' value='Enter key author name, etc. to search'></p>";
 	echo "<UL id='papercite-metabox-content' style=''>";
 	foreach ( $entries as $entry ) {
 		//var_dump($entry['author']->creators);
@@ -232,7 +235,7 @@ function papercite_render_metabox() {
 		$authors = join( ";", array_map( function ( $creator ) {
 			return $creator['surname'] . "," . $creator['firstname'];
 		}, (array) $entry['author']->creators ) );
-		$year    = $entry['year'];
+		$year    = empty( $entry['year'] ) ? "s.d." : $entry['year'];
 		$title   = $entry['title'];
 		echo "<LI class='papercite-metabox-bibentry'><button>[bibcite&nbsp;key=$key]</button>&nbsp;$authors ($year) - $title </LI>";
 	}
@@ -244,9 +247,44 @@ function papercite_metabox( $post_type ) {
 
 }
 
+
 add_action( 'add_meta_boxes', 'papercite_metabox' );
+
+add_action( 'wp_ajax_search_citations', function () {
+	$papercite = &$GLOBALS["papercite"];
+	$entries   = $papercite->getEntries( $papercite->options );
+	$q         = $_REQUEST['q'];
+	$found     = array();
+	foreach ( $entries as $entry ) {
+		if ( stristr( $entry['cite'], $q ) !== false ) {
+			$found[] = $entry;
+		}
+	}
+	header( "Content-type: application/json" );
+	echo json_encode( $found );
+	wp_die();
+} );
+
+add_action( 'wp_ajax_list_styles', function () {
+	global $papercite;
+	$type = $_REQUEST['type'];
+	$list = papercite_list_formats();
+	switch ( $type ) {
+		case 'tpl':
+			$list = papercite_list_formats();
+			break;
+		case 'csl':
+			$list = papercite_list_csl_formats();
+			break;
+	}
+	header( "Content-type: application/json" );
+	echo json_encode( $list );
+	wp_die();
+} );
+
 
 // --- Add the different handlers to WordPress ---
 add_action( 'init', 'papercite_init' );
 add_action( 'wp_head', 'papercite_head' );
 add_filter( 'the_content', 'papercite_cb', - 1 );
+
