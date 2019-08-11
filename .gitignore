@@ -12,3 +12,4 @@ ppc_*
 *.bib
 *.sublime-workspace
 *.bak
+.fuse*

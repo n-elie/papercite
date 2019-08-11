@@ -14,6 +14,32 @@ cite papers.
 ***This fork adds support for textual footnotes, besides references from bibliograhic databases.***
 
 
+## Table of contents 
+
+- [Description](#description)
+- [Installation](#installation)
+  * [Installing CSL styles](#installing-csl-styles)
+- [Frequently Asked Questions](#frequently-asked-questions)
+  * [Where is the documentation?](#where-is-the-documentation-)
+  * [How can I edit my bibtex files?](#how-can-i-edit-my-bibtex-files-)
+  * [How are the entries sorted?](#how-are-the-entries-sorted-)
+  * [How can I personalize the HTML rendering?](#how-can-i-personalize-the-html-rendering-)
+  * [How do I use the new textual footnotes ?](#how-do-i-use-the-new-textual-footnotes--)
+- [Screenshots](#screenshots)
+  * [### 1. With the bibshow & bibcite commands
+![With the bibshow & bibcite commands](https://ps.w.org/#-table-of-contents/assets/screenshot-1.png)
+](#1-with-the-bibshow---bibcite-commands)
+  * [### 2. With the bibtex command
+![With the bibtex command](https://ps.w.org/#-table-of-contents/assets/screenshot-2.png)
+](#2-with-the-bibtex-command)
+  * [### 3. The bibfilter command
+![The bibfilter command](https://ps.w.org/#-table-of-contents/assets/screenshot-3.png)
+](#3-the-bibfilter-command)
+- [TODO](#todo)
+- [Changelog](#changelog)
+- [Upgrade Notice](#upgrade-notice)
+
+
 
 ## Description 
 
@@ -159,19 +185,19 @@ will result in a footnote being generated after the post text. The numbering of 
 ## Screenshots 
 
 ### 1. With the bibshow & bibcite commands
-![With the bibshow & bibcite commands](https://ps.w.org/#-description/assets/screenshot-1.png)
+![With the bibshow & bibcite commands](https://ps.w.org/#-table-of-contents/assets/screenshot-1.png)
 
 
 [With the bibshow & bibcite commands]
 
 ### 2. With the bibtex command
-![With the bibtex command](https://ps.w.org/#-description/assets/screenshot-2.png)
+![With the bibtex command](https://ps.w.org/#-table-of-contents/assets/screenshot-2.png)
 
 
 [With the bibtex command]
 
 ### 3. The bibfilter command
-![The bibfilter command](https://ps.w.org/#-description/assets/screenshot-3.png)
+![The bibfilter command](https://ps.w.org/#-table-of-contents/assets/screenshot-3.png)
 
 
 [The bibfilter command]
