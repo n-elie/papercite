@@ -53,6 +53,9 @@ function papercite_init() {
 			//	wp_register_script( 'papercite-post-editor', plugins_url( 'papercite/js/ppc_post_editor.js' ), array( 'wp-blocks' ) );
 			//	wp_enqueue_script( 'papercite-post-editor' );
 			wp_enqueue_editor();
+		    wp_enqueue_script( 'jquery-ui-dialog' );
+			wp_enqueue_style( 'wp-jquery-ui-dialog');
+
 		}
 	}
 

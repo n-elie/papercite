@@ -1,3 +1,5 @@
+
+
 <?php
 
 /*  Copyright 2012  Benjamin Piwowarski  (email : benjamim@bpiwowar.net)
@@ -41,6 +43,10 @@ EOF
 
 add_action('admin_menu', 'papercite_create_menu');
 
+add_action('wp_enqueue_scripts',function() {
+    wp_enqueue_style( 'wp-jquery-ui-dialog');
+    wp_enqueue_script( 'jquery-ui-dialog' );
+});
 
 function papercite_create_menu() {
 	add_options_page( 'Papercite Settings', 'Papercite plug-in', 'manage_options', 'papercite', 'papercite_options_page' );
@@ -161,12 +167,26 @@ function papercite_options_page() {
 
         }
 
+
+        function jquiModal(msg) {
+             jQuery('body').append("<DIV id='dialog'>" + msg + "</DIV");
+            $jquim = jQuery('#dialog').dialog();
+            console.log('jquim',$jquim);
+            return $jquim;
+        }
+
+        function jquiClose($jquim) {
+            jQuery('.ui-dialog button').trigger('click');
+        }
+
         jQuery('.papercite_options_format_type_radio').change(function(evt) {
             console.log(this,evt);
             var format_type_slctd = jQuery(this).val();
+            $jquim = jquiModal("<H4><img src='/wp-includes/images/spinner-2x.gif'>Please wait while the new styles list are loaded...</H4>");
             jQuery.get(ajaxurl,
                 {'action': 'list_styles', 'type' : format_type_slctd })
                 .success(function (response) {
+                jquiClose($jquim);
                 console.log(response);
                 jQuery('#papercite_format').html('');
                 response.forEach(function(item){
