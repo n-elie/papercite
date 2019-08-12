@@ -232,12 +232,16 @@ function papercite_render_metabox() {
 	foreach ( $entries as $entry ) {
 		//var_dump($entry['author']->creators);
 		$key     = $entry['cite'];
-		$authors = join( ";", array_map( function ( $creator ) {
-			return $creator['surname'] . "," . $creator['firstname'];
-		}, (array) $entry['author']->creators ) );
+		if (!empty($entry['autor'])) {
+			$authors = join( ";", array_map( function ( $creator ) {
+				return $creator['surname'] . "," . $creator['firstname'];
+			}, (array) $entry['author']->creators ) );
+		} else {
+			$authors = "s.a.";
+		}
 		$year    = empty( $entry['year'] ) ? "s.d." : $entry['year'];
 		$title   = $entry['title'];
-		echo "<LI class='papercite-metabox-bibentry'><button>[bibcite&nbsp;key=$key]</button>&nbsp;$authors ($year) - $title </LI>";
+		echo "<LI class='papercite-metabox-bibentry'><button>[bibcite key=$key]</button> $authors ($year) - $title </LI>";
 	}
 	echo "</UL>";
 }

@@ -43,7 +43,8 @@ function papercite_list_formats( $format_type = 'tpl' ) {
 			$path = plugin_dir_path( __FILE__ ) . "/format";
 			break;
 		case 'csl':
-			$path = plugin_dir_path( __FILE__ ) . "/vendor/citation-style-language/styles-distribution";
+		//	$path = plugin_dir_path( __FILE__ ) . "/vendor/citation-style-language/styles-distribution";
+			$path = plugin_dir_path( __FILE__ ) . "/" . CSL_STYLES_LOCATION;
 			break;
 	}
 	$formats_list = list_files( $path );

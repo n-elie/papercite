@@ -71,7 +71,14 @@ class CiteProcRenderer {
 	}
 
 	public function cssStyles() {
-		return $this->citeproc->renderCssStyles();
+		$css_styles = null;
+		try {
+			$css_styles = $this->citeproc->renderCssStyles();
+		} catch (Exception $ex) {
+			debug($ex);
+			throw $ex;
+		}
+		return $css_styles;
 	}
 
 	public function renderURL( $cslItem, $renderedText ) {

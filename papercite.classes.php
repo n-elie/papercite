@@ -35,7 +35,8 @@ define( 'PAPERCITE_CUR_DIR', __DIR__ );
 if ( ! defined( 'PAPERCITE_CONTENT_DIR' ) ) {
 	define( 'PAPERCITE_CONTENT_DIR', dirname( __DIR__ ) );
 }
-define( 'CSL_STYLES_LOCATION', "vendor/citation-style-language/styles-distribution" );
+//define( 'CSL_STYLES_LOCATION', "vendor/citation-style-language/styles-distribution" );
+define( 'CSL_STYLES_LOCATION', "csl-styles" );
 
 include_once( "lib/BibTex_pear.php" );
 include_once( "lib/BibTex_osbib.php" );

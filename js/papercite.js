@@ -22,12 +22,14 @@ $j(document).ready(function () {
     });
 
     $j('.papercite-metabox-bibentry button').click(function (evt) {
+        evt.preventDefault();
         var but = evt.target;
         var text = $j(but).text();
         console.log(but,text);
         // add into text editor
         //$('.is-selected').append('abc')
-        $j('#was-selected').append(text);
+        //$j('#was-selected').append(text);
+        tinymce.activeEditor.insertContent("["+text+"]");
     });
 
     $j(document).on('click','#papercite-entries-search',function(evt) {
