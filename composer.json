@@ -32,7 +32,8 @@
     "citation-style-language/styles-distribution": "@dev"
   },
   "require": {
-    "seboettg/citeproc-php": "^2"
+    "seboettg/citeproc-php": "^2",
+    "querypath/QueryPath": ">=3.0.0"
   },
   "scripts": {
     "wp2md": "php bin/wp2md.php readme.txt"

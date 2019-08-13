@@ -11,7 +11,7 @@
 Papercite helps to format bibtex entries to display a bibliography or
 cite papers.
 
-***This fork adds support for textual footnotes, besides references from bibliograhic databases.***
+***This fork adds support for textual footnotes, and CSL support ***
 
 
 ## Table of contents 
@@ -48,7 +48,7 @@ cite papers.
 **To report bugs or request features, please go to https://github.com/digfish/papercite**.
 **Documentation can be found on http://papercite.readthedocs.org/en/latest/**.
 
-papercite format bibtex entries as HTML so they can be inserted in
+*Papercite* format bibtex entries as HTML so they can be inserted in
 WordPress pages and posts. The input data is a bibtex file (either local
 or remote) and entries can be formatted by default using various
 predefined styles. Bibtex source file and a link to the publication are
@@ -128,15 +128,18 @@ in the _documentation_ that you can access through the plugin list
 (click on the documentation link).
 
 
-### Installing CSL styles 
+### CSL Support 
 
-For more CSL styles that the ones come by default in this package (there are six in the directory `csl-styles`), you'll have to use [composer](https://getcomposer.org/) to download them.
+In order for the CSL Support to work, Papercite is dependent of external libraries, which don't come in the distribution, due to its huge size. To download this extra libraries, you'll have to use [composer](https://getcomposer.org/) to download them.
 Inside the package main directory issue the following command:
 
 ```composer update```
 
-and composer will take care of the rest, downloading the CSL xml files into `vendor/citation-style-language/styles-distribution` .
+and composer will take care of downloading all dependencies.
 
+This command will also download a complete set of CSL style definitions into `vendor/citation-style-language/styles-distribution` ;
+
+There are already six CSL styles that the ones come by default in this package, located in n the directory `csl-styles`.
 
 ## Frequently Asked Questions 
 
@@ -214,9 +217,14 @@ will result in a footnote being generated after the post text. The numbering of 
 ## Changelog 
 
 
+### 0.6.3 
+
+* Added QueryPath library to modify the HTML produced by Citeproc, in order to allow the anchors on the footnotes to work.
+
+
 ### 0.6.2.1 
 
-* There are now 6 CSL files in the directory `csl-styles`. The citation references on every article in CSL format are now being shown.
+* The distribution comes now with six CSL files in the directory `csl-styles`. The citation references on every article in CSL format are now being shown.
 
 
 ### 0.6.2 

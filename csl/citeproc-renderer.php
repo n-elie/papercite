@@ -97,12 +97,7 @@ class CiteProcRenderer {
 
 	public function bibliography( $params = array() ) {
 
-		/*		if (empty($this->citeproc)) {
-					$styleName = $this->init( $params );
 
-					$this->setStyleName( $styleName );
-					$this->setStyleDefs( $this->styleDefs );
-				}*/
 		if ( ! empty( $params['data'] ) ) {
 			$this->data = $params['data'];
 		}
@@ -111,6 +106,21 @@ class CiteProcRenderer {
 		$bibliography = $this->citeproc->render( $dataObj, "bibliography" );
 
 		return $bibliography;
+	}
+
+	public function add_anchors(&$biblio_html) {
+		$qp = html5qp($biblio_html);
+
+		$out = '';
+		$qpa = new QueryPath\DOMQuery();
+		$qp->find('.csl-entry')->each(function ($i,$elem) use($qpa)  {
+			$idx = intval($i)+1;
+			$new_anchor = "<SPAN class='csl-entry-idx'>[$idx]</SPAN> <A name='paperkey_$idx'></A>";
+			$qp = html5qp($elem)->prepend($new_anchor);
+		});
+		ob_start();
+		$qp->writeHTML(null);
+		return ob_get_clean();
 	}
 
 
