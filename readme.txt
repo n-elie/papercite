@@ -187,6 +187,10 @@ will result in a footnote being generated after the post text. The numbering of 
 
 == Changelog ==
 
+= 0.6.2 =
+
+* Metabox on the post editor shows all key entries, allowing to search in them and insert the proper shortcode in the text
+
 = 0.6.1 =
 
 * CSL styles are shown on the preview in papercite options

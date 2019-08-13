@@ -8,7 +8,13 @@
  * @see \citeproc
  */
 
-require dirname( __DIR__ ) . "/vendor/autoload.php";
+//require_once dirname( __DIR__ ) . "/vendor/autoload.php";
+$ds= DIRECTORY_SEPARATOR;
+define('PAPERCITE_DIR',str_replace("/",$ds,dirname( __DIR__ )));
+$citeproc_dir = PAPERCITE_DIR . "{$ds}vendor{$ds}autoload.php";
+
+if (file_exists($citeproc_dir))
+	require_once $citeproc_dir;
 
 use Seboettg\CiteProc\CiteProc;
 use Seboettg\CiteProc\StyleSheet;

@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 require_once( __DIR__ . '/../tests/papercite-root.php' );
 
 require_once __DIR__ . "/../papercite.classes.php";
-require_once __DIR__ . "/../utils/my-converter.php";
+//require_once __DIR__ . "/../utils/my-converter.php";
 require_once __DIR__ . "/../csl/citeproc-renderer.php";
 require_once __DIR__ . "/../csl/csl-converter.php";
 

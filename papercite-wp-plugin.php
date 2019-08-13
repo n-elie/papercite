@@ -235,7 +235,7 @@ function papercite_render_metabox() {
 	foreach ( $entries as $entry ) {
 		//var_dump($entry['author']->creators);
 		$key     = $entry['cite'];
-		if (!empty($entry['autor'])) {
+		if (!empty($entry['author'])) {
 			$authors = join( ";", array_map( function ( $creator ) {
 				return $creator['surname'] . "," . $creator['firstname'];
 			}, (array) $entry['author']->creators ) );

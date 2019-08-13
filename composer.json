@@ -33,7 +33,8 @@
   },
   "require": {
     "seboettg/citeproc-php": "^2"
-  },  "scripts": {
-  "wp2md": "php bin/wp2md.php readme.txt"
-}
+  },
+  "scripts": {
+    "wp2md": "php bin/wp2md.php readme.txt"
+  }
 }

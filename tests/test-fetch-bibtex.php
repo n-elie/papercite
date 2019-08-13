@@ -21,7 +21,7 @@ if ( ! defined( 'PAPERCITE_CONTENT_DIR' ) ) {
 
 #require_once dirname(__FILE__) . '/common.inc.php';
 require_once __DIR__ . "/../papercite.classes.php";
-require_once __DIR__ . "/../utils/my-converter.php";
+require_once __DIR__ . "/../csl/csl-converter.php";
 require_once __DIR__ . "/../csl/citeproc-renderer.php";
 
 

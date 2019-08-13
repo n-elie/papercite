@@ -29,7 +29,7 @@ $j(document).ready(function () {
         // add into text editor
         //$('.is-selected').append('abc')
         //$j('#was-selected').append(text);
-        tinymce.activeEditor.insertContent("["+text+"]");
+        tinymce.activeEditor.insertContent(text);
     });
 
     $j(document).on('click','#papercite-entries-search',function(evt) {
@@ -40,17 +40,7 @@ $j(document).ready(function () {
         
             $j('#papercite-metabox-content').find('li').hide();
             $j('#papercite-metabox-content').find('li').has(':contains(' + text + ')').show();
-/*            $j('#papercite-metabox-content').find('li').each(function (i, elem) {
 
-                if ($j(elem).has(':contains(' + text + ')')) {
-                    $j(elem).show();
-                    console.log('show',i,elem);
-                } else {
-                    $j(elem).hide();
-                }
-            });
-*/            //PpcsubmitSearch(text);
-        
     });
 
     function PpcsubmitSearch(q) {
