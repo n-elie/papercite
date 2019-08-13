@@ -777,7 +777,7 @@ class WpPapercite extends Papercite {
 	 * This does two things:
 	 * -dynamically creates html form based on parameters (author and menutype)
 	 * -rebuilds command which is then sent as the bibtex command
-	 *  TODO: add CSL support (it's working only with [bibtex] short tag!)
+	 *
 	 *
 	 * @param unknown $options The arguments
 	 *

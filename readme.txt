@@ -13,7 +13,7 @@ LICENSE URI: http://www.gnu.org/licenses/gpl-2.0.html
 Papercite helps to format bibtex entries to display a bibliography or
 cite papers.
 
-***This fork adds support for textual footnotes, and CSL support ***
+*** This fork adds support for textual footnotes, and CSL support ***
 
 == Table of contents ==
 
@@ -27,9 +27,9 @@ cite papers.
   * [How can I personalize the HTML rendering?](#how-can-i-personalize-the-html-rendering-)
   * [How do I use the new textual footnotes ?](#how-do-i-use-the-new-textual-footnotes--)
 - [Screenshots](#screenshots)
-  * [1. With the bibshow & bibcite commands](#1-with-the-bibshow---bibcite-commands)
-  * [2. With the bibtex command](#2-with-the-bibtex-command)
-  * [3. The bibfilter command](#3-the-bibfilter-command)
+  * [With the bibshow & bibcite commands]
+  * [With the bibtex command]
+  * [The bibfilter command]
 - [TODO](#todo)
 - [Changelog](#changelog)
 - [Upgrade Notice](#upgrade-notice)
@@ -86,7 +86,7 @@ _Output_:
 
 **Documentation can be found from within WordPress plugin list (click on
 the documentation link)**. You can see the documentation of the plugin
-as installed on my site <a href="http://www.bpiwowar.net/wp-content/plugins/papercite/documentation/index.html">here</a>.
+as installed on *bpiwowar* website <a href="http://www.bpiwowar.net/wp-content/plugins/papercite/documentation/index.html">here</a>.
 
 
 _Contributors_:
