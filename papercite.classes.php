@@ -33,7 +33,7 @@
 
 define( 'PAPERCITE_CUR_DIR', __DIR__ );
 if ( ! defined( 'PAPERCITE_CONTENT_DIR' ) ) {
-	define( 'PAPERCITE_CONTENT_DIR', dirname( __DIR__ ) );
+	define( 'PAPERCITE_CONTENT_DIR', dirname( __FILE__ ) );
 }
 //define( 'CSL_STYLES_LOCATION', "vendor/citation-style-language/styles-distribution" );
 define( 'CSL_STYLES_LOCATION', "csl-styles" );
@@ -551,6 +551,7 @@ class Papercite {
 		// print "</pre>";
 //		print "\n$command,";
 //		print_r($options_pairs);
+
 		// ---Set preferences
 		// by order of increasing priority
 		// (0) Set in the shortcode

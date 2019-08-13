@@ -1,4 +1,4 @@
-PAPERCITE
+# PAPERCITE 
 
 **CONTRIBUTORS:** bpiwowar, digitalfisherman  
 **TAGS:** formatting, bibtex, bibliography, footnotes  
@@ -27,13 +27,13 @@ cite papers.
   * [How do I use the new textual footnotes ?](#how-do-i-use-the-new-textual-footnotes--)
 - [Screenshots](#screenshots)
   * [### 1. With the bibshow & bibcite commands
-![With the bibshow & bibcite commands](https://ps.w.org/#-table-of-contents/assets/screenshot-1.png)
+![With the bibshow & bibcite commands](https://ps.w.org/papercite/assets/screenshot-1.png)
 ](#1-with-the-bibshow---bibcite-commands)
   * [### 2. With the bibtex command
-![With the bibtex command](https://ps.w.org/#-table-of-contents/assets/screenshot-2.png)
+![With the bibtex command](https://ps.w.org/papercite/assets/screenshot-2.png)
 ](#2-with-the-bibtex-command)
   * [### 3. The bibfilter command
-![The bibfilter command](https://ps.w.org/#-table-of-contents/assets/screenshot-3.png)
+![The bibfilter command](https://ps.w.org/papercite/assets/screenshot-3.png)
 ](#3-the-bibfilter-command)
 - [TODO](#todo)
 - [Changelog](#changelog)
@@ -76,6 +76,7 @@ _Filtering and grouping_:
 *   Filtering on publication type and authors
 *   Regular expression filtering on any type
 *   Publications can be grouped and sorted in various ways
+*   Searchable bibtex entries list, allowing to insert the desired citation directly in text
 
 _Output_:
 
@@ -128,10 +129,12 @@ in the _documentation_ that you can access through the plugin list
 
 
 ### Installing CSL styles 
-The CSL styles don't come by default in this package, since the complete list
-is huge (more than 9000 entries). You'll have to use [composer](https://getcomposer.org/) to download them.
+
+For more CSL styles that the ones come by default in this package (there are six in the directory `csl-styles`), you'll have to use [composer](https://getcomposer.org/) to download them.
 Inside the package main directory issue the following command:
-`composer update` 
+
+```composer update```
+
 and composer will take care of the rest, downloading the CSL xml files into `vendor/citation-style-language/styles-distribution` .
 
 
@@ -185,19 +188,19 @@ will result in a footnote being generated after the post text. The numbering of 
 ## Screenshots 
 
 ### 1. With the bibshow & bibcite commands
-![With the bibshow & bibcite commands](https://ps.w.org/#-table-of-contents/assets/screenshot-1.png)
+![With the bibshow & bibcite commands](https://ps.w.org/papercite/assets/screenshot-1.png)
 
 
 [With the bibshow & bibcite commands]
 
 ### 2. With the bibtex command
-![With the bibtex command](https://ps.w.org/#-table-of-contents/assets/screenshot-2.png)
+![With the bibtex command](https://ps.w.org/papercite/assets/screenshot-2.png)
 
 
 [With the bibtex command]
 
 ### 3. The bibfilter command
-![The bibfilter command](https://ps.w.org/#-table-of-contents/assets/screenshot-3.png)
+![The bibfilter command](https://ps.w.org/papercite/assets/screenshot-3.png)
 
 
 [The bibfilter command]
@@ -209,6 +212,16 @@ will result in a footnote being generated after the post text. The numbering of 
 
 
 ## Changelog 
+
+
+### 0.6.2.1 
+
+* There are now 6 CSL files in the directory `csl-styles`. The citation references on every article in CSL format are now being shown.
+
+
+### 0.6.2 
+
+* Metabox on the post editor shows all key entries, allowing to search in them and insert the proper shortcode in the text
 
 
 ### 0.6.1 
@@ -611,6 +624,10 @@ will result in a footnote being generated after the post text. The numbering of 
 
 
 ## Upgrade Notice 
+
+
+### 0.6.2 
+If you want more CSL styles, copy the new ones into the directory inside the plugin named `csl-styles`
 
 
 ### 0.6.0 

@@ -486,7 +486,7 @@ function papercite_options_validate( $input ) {
 	$options['file']        = trim( $input['file'] );
 	$options['timeout']     = trim( $input["timeout"] );
 	$options['highlight']   = trim( $input["highlight"] );
-	$options['format_type'] = isset( $input['format_type'] ) ? input['format_type'] : 'tpl';
+	$options['format_type'] = isset( $input['format_type'] ) ? $input['format_type'] : 'tpl';
 
 	if ( array_key_exists( 'form', $input ) ) {
 		$a                       = array();

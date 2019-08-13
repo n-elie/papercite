@@ -13,3 +13,4 @@ ppc_*
 *.sublime-workspace
 *.bak
 .fuse*
+*.json

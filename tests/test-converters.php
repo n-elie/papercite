@@ -67,6 +67,7 @@ class ConvertersTest extends TestCase {
 		$styleName    = "apa";
 		$renderer     = new CiteProcRenderer();
 		$renderer->setJsonSource( $jsonFilename );
+		$renderer->setStyleDefs(file_get_contents("csl-styles/apa.csl"));
 		$basename                   = pathinfo( $jsonFilename, PATHINFO_FILENAME );
 		$bibliography_filename_html = "$basename.bibliography.$styleName.html";
 		echo "Saving bibliography to $bibliography_filename_html \n";

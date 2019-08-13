@@ -110,17 +110,6 @@ function &papercite_cb( $myContent ) {
 		$myContent
 	);
 
-	//digfish: textual footnotes
-	/*    $note_matches = array();
-		$note_matches_count = preg_match_all('/\[ppcnote\](.+?)\[\/ppcnote\]/i',$text,$note_matches);
-
-		if ($note_matches_count !== FALSE) {
-			$ft_matches = $note_matches[1];
-			foreach ($ft_matches as $match) {
-				$papercite->textual_footnotes[] = $match;
-			}
-		}*/
-
 	$post_id = get_the_ID();
 
 	$text = preg_replace_callback(
@@ -148,7 +137,7 @@ function &papercite_cb( $myContent ) {
 	// (3) Handles custom keys in bibshow and return
 	$text = str_replace( $papercite->keys, $papercite->keyValues, $text );
 
-	// (4) add CSS styles to the markup if there is
+	// (4) add CSS styles to the markup if there is some
 	$text = renderCssStyles( $text );
 
 	return $text;
@@ -228,7 +217,7 @@ function papercite_render_metabox() {
 	$entries = $papercite->getEntries( $papercite->options );
 
 	array_shift( $entries );
-	$entries = array_slice( $entries, 0, 100 );
+	//$entries = array_slice( $entries, 0, 100 );
 	//d($entries[0]);
 	echo "<p><INPUT type='text' id='papercite-entries-search' name='papercite-entries-search' value='Enter key author name, etc. to search'></p>";
 	echo "<UL id='papercite-metabox-content' style=''>";
