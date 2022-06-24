@@ -543,7 +543,7 @@ class Papercite {
 		// Get all the options pairs and store them
 		// in the $options array
 		$options_pairs = array();
-		preg_match_all( "/\s*([\w-:_]+)=(?:([^\"]\S*)|\"([^\"]+)\")(?:\s+|$)/", sizeof( $matches ) > 2 ? $matches[2] : "", $options_pairs, PREG_SET_ORDER );
+		preg_match_all( "/\s*([\w\-:_]+)=(?:([^\"]\S*)|\"([^\"]+)\")(?:\s+|$)/", sizeof( $matches ) > 2 ? $matches[2] : "", $options_pairs, PREG_SET_ORDER );
 
 
 		// print "<pre>";
@@ -705,7 +705,7 @@ class Papercite {
 								$parser->processTitles( $processtitles );
 								if ( ! $parser->parse( $data ) ) {
 									$this->cache[ $biburi ] = false;
-									continue;
+									break;
 								} else {
 									$this->cache[ $biburi ] = &$parser->data;
 								}
@@ -801,7 +801,7 @@ class Papercite {
 	 */
 	function getCached( $url, $timeout = 3600, $sslverify = false ) {
 		// check if cached file exists
-		$name     = strtolower( preg_replace( "@[/:]@", "_", $url ) );
+		$name     = strtolower( md5( $url ) );
 		$dir_path = self::getCacheDirectory( 'path' );
 		$file     = "$dir_path/$name.bib";
 

@@ -48,8 +48,9 @@ add_action('wp_enqueue_scripts',function() {
     wp_enqueue_script( 'jquery-ui-dialog' );
 });
 
-function papercite_create_menu() {
-	add_options_page( 'Papercite Settings', 'Papercite plug-in', 'manage_options', 'papercite', 'papercite_options_page' );
+function papercite_create_menu()
+{
+    add_options_page('Custom Papercite Page', 'Papercite plug-in', 'manage_options', 'papercite', 'papercite_options_page');
 }
 
 function papercite_checked_files_cell($key, $folder, $suffix, $ext, $mime)
@@ -63,11 +64,13 @@ function papercite_checked_files_cell($key, $folder, $suffix, $ext, $mime)
     . "<td><span class='papercite_checked_files'>-</span><span class='papercite_checked_files'>+</span></td></tr>";
 }
 
-function papercite_options_page() {
-	$options = $GLOBALS["papercite"]->options;
-	wp_enqueue_script( 'json2' );
-	wp_enqueue_script( 'jquery-ui-dialog' );
-	?>
+function papercite_options_page()
+{
+    wp_enqueue_script('json2');
+    wp_enqueue_script('jquery-ui-dialog');
+?>
+  <div>
+    <h2>Papercite options</h2>
 
 
     <div class="wrap">
@@ -129,7 +132,6 @@ function papercite_options_page() {
                 cell.remove();
             }
         });
-
 
         jQuery('input.papercite_options_format_type_radio').each(function (i, radio) {
             if (jQuery(radio).val() == "<?php echo $options['format_type'] ?>") {
@@ -217,6 +219,7 @@ add_action( 'wp_ajax_bibtex_preview', function () {
 
 // add the admin settings and such
 add_action('admin_init', 'papercite_admin_init');
+
 function papercite_admin_init() {
 	$GLOBALS["papercite"]->init();
 
@@ -280,7 +283,11 @@ function papercite_list_formats_type( $format_type ) {
 
 function papercite_file() {
 	$options = $GLOBALS["papercite"]->options;
-	echo "<input id='papercite_file' name='papercite_options[file]' size='40' type='text' value='{$options['file']}' />";
+    
+     if (!isset($options['file'])) {
+        $options['file'] = '';
+    }
+    echo "<input id='papercite_file' name='papercite_options[file]' size='40' type='text' value='{$options['file']}' />";
 }
 
 /**
@@ -384,10 +391,11 @@ function papercite_ajax_clear_db() {
 	die();
 }
 
-function papercite_ajax_create_db() {
+function papercite_ajax_create_db()
+{
     require_once(dirname(__FILE__) . "/papercite_db.php");
     print json_encode(papercite_install(true));
-	die();
+    die();
 }
 
 function papercite_use_db() {

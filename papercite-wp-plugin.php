@@ -102,13 +102,15 @@ function &papercite_cb( $myContent ) {
 		return $replaced_content;
 	}
 
-	// (1) First phase - handles everything but bibcite keys
-	$text = preg_replace_callback(
-	//       "/\[\s*((?:\/)bibshow|bibshow|bibcite|bibtex|bibfilter|ppcnote)(?:\s+([^[]+))?]/",
-		"/\[\s*((?:\/)bibshow|bibshow|bibcite|bibtex|bibfilter)(?:\s+([^[]+))?]/",
-		array( $papercite, "process" ),
-		$myContent
-	);
+  // (1) First phase - handles everything but bibcite keys
+    $text = preg_replace_callback(
+ //       "/\[\s*((?:\/)bibshow|bibshow|bibcite|bibtex|bibfilter|ppcnote)(?:\s+([^[]+))?]/",
+        "/\[\s*((?:\/)bibshow|bibshow|bibcite|bibtex|bibfilter)(?:\s+([^[]+))?]/",
+        function($match) use($papercite) {
+            return $papercite->process($match);
+        },
+        $myContent
+    );
 
 	$post_id = get_the_ID();
 
@@ -278,6 +280,33 @@ add_action( 'wp_ajax_list_styles', function () {
 	wp_die();
 } );
 
+
+
+/**
+ * by digfish (09 Apr 2019)
+ * Restore .bib upload functionality in Media Library for WordPress 4.9.9 and up
+ * adapted from https://gist.github.com/rmpel/e1e2452ca06ab621fe061e0fde7ae150
+ */
+add_filter('wp_check_filetype_and_ext', function($values, $file, $filename, $mimes) {
+    if ( extension_loaded( 'fileinfo' ) ) {
+        // with the php-extension, a bib file is issues type text/plain so we fix that back to
+        // application/x-bibtex by trusting the file extension.
+        $finfo     = finfo_open( FILEINFO_MIME_TYPE );
+        $real_mime = finfo_file( $finfo, $file );
+        finfo_close( $finfo );
+        if ( $real_mime === 'text/plain' && preg_match( '/\.(bib)$/i', $filename ) ) {
+            $values['ext']  = 'bib';
+            $values['type'] = 'application/x-bibtex';
+        }
+    } else {
+        // without the php- extension, we probably don't have the issue at all, but just to be sure...
+        if ( preg_match( '/\.(bib)$/i', $filename ) ) {
+            $values['ext']  = 'bib';
+            $values['type'] = 'application/x-bibtex';
+        }
+    }
+    return $values;
+}, PHP_INT_MAX, 4);
 
 // --- Add the different handlers to WordPress ---
 add_action( 'init', 'papercite_init' );
